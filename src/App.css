@@ -32,20 +32,29 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
+.dashboardMenuList {
+  position: relative;
+}
+
 .arrowKeys {
   display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 0;
+    position: absolute;
+    right: -66px;
+    top: 5px;
 }
 
-.menuList .MuiListItemText-root {
-display: none;
+.dashboardMenuList .MuiListItemText-root {
+  display: none;
 }
-.menuList.active .MuiListItemText-root {
-display: unset;
+
+.dashboardMenuList.active .MuiListItemText-root {
+  display: unset;
 }
