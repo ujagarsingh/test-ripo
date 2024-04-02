@@ -9,8 +9,6 @@ function App() {
   return (
     <Router>
       <Dashboard />
-
-
       <Routes>
         <Route path="/login" element={<LoginPage />} />
       </Routes>
