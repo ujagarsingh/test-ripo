@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.arrowKeys {
+  display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.menuList .MuiListItemText-root {
+display: none;
+}
+.menuList.active .MuiListItemText-root {
+display: unset;
+}
