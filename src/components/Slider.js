@@ -21,8 +21,8 @@ function Slider() {
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
-                modules={[Autoplay, Pagination]}
+                Navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
                 <SwiperSlide><img src="https://material.dahuasecurity.com/uploads/image/20240314/Banner2_Dahua-Wireless-Series-New-Arrivals-Online-Event_384001600.jpg" alt="girl hold eggs" /></SwiperSlide>
