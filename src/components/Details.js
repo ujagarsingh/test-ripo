@@ -1,4 +1,4 @@
-import { Box, Container, Icon, Typography } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
@@ -7,8 +7,8 @@ import React from 'react'
 
 function Details() {
     return (
-        <Container>
-            <Box className='box' bgcolor='rgb(51,51,51)'>
+        <Box className='box' bgcolor='rgb(51,51,51)'>
+            <Container>
                 <div className="fotter_f">
                     <div className="newletter">
                         <h4 className='h_f'>newletter</h4>
@@ -18,7 +18,7 @@ function Details() {
                             Enter your email address to receive the latest news & products information</h6>
                     </div>
                     <div className="f_item">
-                        <a className='heading' href="Products">Products</a>
+                        <Typography className='heading' href="Products">Products</Typography>
                         <a href="Network Cameras">Network Cameras</a>
                         <a href="HDCVI Cameras">HDCVI Cameras</a>
                         <a href="PTZ Cameras">PTZ Cameras</a>
@@ -29,7 +29,7 @@ function Details() {
                         <a href="Learn More">Learn More</a>
                     </div>
                     <div className="f_item">
-                        <a className='heading' href=" Solutions">Solutions</a>
+                        <Typography className='heading' href=" Solutions">Solutions</Typography>
                         <a href="Transportation">Transportation</a>
                         <a href="Critical Infrastructure">Critical Infrastructure</a>
                         <a href="Traffic">Traffic</a>
@@ -38,7 +38,7 @@ function Details() {
                         <a href="Retail">Retail</a>
                     </div>
                     <div className="f_item">
-                        <a className='heading' href=" Support"> Support</a>
+                        <Typography className='heading' href=" Support"> Support</Typography>
                         <a href="Tools">Tools</a>
                         <a href="Download Center">Download Center</a>
                         <a href="Training">Training</a>
@@ -48,12 +48,12 @@ function Details() {
                         <a href="Dahua India Service Center And The Policy">Dahua India Service Center And The Policy</a>
                     </div>
                     <div className="f_item">
-                        <a className='heading' href="Partners">Partners</a>
+                        <Typography className='heading' href="Partners">Partners</Typography>
                         <a href="Dahua ECO Partner Program">Dahua ECO Partner Program</a>
                     </div>
 
                     <div className="f_item">
-                        <a className='heading' href="News & Events">News & Events</a>
+                        <Typography className='heading' href="News & Events">News & Events</Typography>
                         <a href="Press Release">Press Release</a>
                         <a href="Success Stories">Success Stories</a>
                         <a href="Notice">Notice</a>
@@ -62,7 +62,7 @@ function Details() {
                         <a href="CSR">CSR</a>
                     </div>
                     <div className="f_item">
-                        <a className='heading' href='About Us'>About Us</a>
+                        <Typography className='heading' href='About Us'>About Us</Typography>
                         <a href='Introduction'>Introduction</a>
                         <a href='Contact Us'>Contact Us</a>
                         <a href='Trust Center'>Trust Center</a>
@@ -70,6 +70,7 @@ function Details() {
                         <a href='Privacy Policy'>Privacy Policy</a>
                     </div>
                 </div>
+                </Container>
                 <div className="sepration"></div>
                 <Container>
                     <Box className="fotter_s">
@@ -84,9 +85,8 @@ function Details() {
                             <FingerprintIcon />
                         </Box>
                     </Box>
-                </Container>
-            </Box>
-        </Container>
+            </Container>
+        </Box>
     )
 }
 
