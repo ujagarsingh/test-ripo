@@ -1,3 +1,6 @@
+@import url(home.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+
 .App {
   text-align: center;
 }
@@ -74,9 +77,14 @@
 
 .login-bg{
   width:100%;
-  height:100vh;
+  margin: auto;
+
+  min-height: 100vh;
   background-color:#E7E2FF;
   z-index:-6;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 .container {
   width: 910px;
@@ -99,8 +107,8 @@
 }
 .login-header {
   background-color:white;
-  width: 800px;
-    height: 70vh;
+  width: 845px;
+    height: 60vh;
     margin: auto;
     display: flex;
     align-items: center;
@@ -108,23 +116,27 @@
     border-radius: 20px;
     margin-top: 120px;
     gap: 10px;
+  }
+  
+  .login-main {
     position:relative;
+    z-index: 0;
 }
 
-.login-header::before {
+.login-main::before {
   content:'';
   border:1px solid #654FF0;
   width:50px;
   height:50px;
   position:absolute;
-  top:-16px;
+  top:105px;
   left:-20px;
   border-radius:50px;
   background-color:#654FF0;
- z-index: index 1;;
+z-index: -1;
 }
 
-.login-header::after {
+.login-main::after {
   content:'';
   border:1px solid white;
   width:50px;
@@ -135,6 +147,7 @@
   border-radius:50px;
   background-color:white;
   
+  z-index: -1;
 }
 
 
@@ -148,17 +161,22 @@ gap:10px;
 
 .username {
   width:300px;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 10px;
   background-color:#F3F1FF;
-  
+  border: none;
+  padding: 15px 12px 12px 31px;
+    font-size: 15px;
 }
+
 .password {
   width:300px;
   background-color:#F3F1FF;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 10px;
-  
+  border: none;
+  padding: 15px 12px 12px 31px;
+    font-size: 15px;
 }
 
 .LoginButton {
@@ -179,8 +197,12 @@ gap:10px;
   color: #8473F3;
 }
 .googleBox{
-  display:flex;
-  margin: auto;
+  display: flex;
+  /* margin: auto; */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .googleBox img {
@@ -189,9 +211,10 @@ gap:10px;
 
 .loginPageRightPart {
   position:relative;
-
-  width: 370px;
-    height: 70vh;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 415px;
+    height: 60vh;
     background-color: #654FF0;
 
 }
@@ -200,9 +223,9 @@ gap:10px;
   position: relative;
   display: flex;
   border: 1px solid #897AF1;
-  width: 235px;
+  width: 255px;
   border-radius: 40px;
-  height: 332px;
+  height: 345px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -216,11 +239,90 @@ gap:10px;
 }
 
 
-.loginOverlayImage img {
+.girlimage {
   position: absolute;
     top: 150px;
-    left: 75px;
+    left: 105px;
     width: 259px;
     height: 250px;
     border-radius: 50px;
+}
+
+.login-icon {
+  width: 60px;
+    position: absolute;
+    top: 270px;
+    left: 45px;
+}
+
+.login-username {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items:center;
+  text-align:center;
+
+}
+
+.login-password {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items:center;
+  text-align:center;
+
+}
+
+.MuiSvgIcon-root {
+  position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 30px;
+
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+}
+
+@media only screen and (max-width: 600px) {
+  .loginPageRightPart {
+    display: none;
+  }
+  .login-header {
+    width: 800px;
+    height: 100vh;
+    
+  }
+}
+@media only screen and (max-width: 600px) {
+  .login-page {
+    width: 600px;
+    margin: auto;
+    height:50vh;
+    font-size: 25px;
+  }
+  .username {
+    width: 479px;
+    font-size: 27px;
+    padding: 27px 12px 27px 90px;
+  }
+  .password {
+    width: 479px;
+    font-size: 27px;
+    padding: 27px 12px 27px 90px;
+  }
+
+  .MuiSvgIcon-root {
+    font-size: 52px !important;
+    top: 15px;
+  }
+  .LoginButton{
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .LoginButton:hover {
+    background-color: transparent;
+  }
 }
