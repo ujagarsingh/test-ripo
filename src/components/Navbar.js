@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const pages = ['Products', 'Category',];
+const settings = ['LogIn'];
 
 function ResponsiveAppBar() {
 
