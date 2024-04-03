@@ -17,8 +17,8 @@ import * as React from "react";
 import StoreIcon from "@mui/icons-material/Store";
 import PersonIcon from "@mui/icons-material/Person";
 import { useNavigate } from "react-router-dom";
-import DashboardMenu from "./DashboardMenu";
-import MenuButton from "./MenuButton";
+import DashboardMenu from "../components/DashboardMenu";
+import MenuButton from "../components/MenuButton";
 
 function Dashboard() {
   let navigate = useNavigate();

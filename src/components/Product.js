@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
+import React, { Fragment, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -13,22 +11,52 @@ import './styles.css';
 import { FreeMode, Pagination, Navigation } from 'swiper/modules';
 import { Box, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
 import styled from '@emotion/styled';
+import SingleProduct from './SingleProduct';
 
-const CardNew = styled(Card)({
-    height: 450,
-    width: 360,
-    marginTop: 20,
-    padding: 2,
-    paddingBottom: 25
-});
 
-const CardMediaNew = styled(CardMedia)({
-    height: 140,
-    marginTop: 20,
 
-});
 
-export default function App() {
+
+export default function Product() {
+
+
+    const CardMediaNew = styled(CardMedia)({
+        height: 140,
+        marginTop: 20,
+    });
+
+    const CardNew = styled(Card)({
+        height: 450,
+        width: 360,
+        marginTop: 20,
+        padding: 2,
+        paddingBottom: 25
+    });
+
+
+
+    const data = [
+        {
+            image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
+            name: 'LDV65-SAI400K',
+            detail: "65'' Floor-standing Digital Signage"
+        },
+        {
+            image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
+            name: 'LDV65-SAI400K',
+            detail: "65'' Floor-standing Digital Signage"
+        },
+        {
+            image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
+            name: 'LDV65-SAI400K',
+            detail: "65'' Floor-standing Digital Signage"
+        },
+        {
+            image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
+            name: 'LDV65-SAI400K',
+            detail: "65'' Floor-standing Digital Signage"
+        },
+    ]
     return (
         <Box>
             <Typography variant='h4' fontWeight={700} textAlign='center' mt={5} mb={4} color={'black'}>New Products</Typography>
@@ -42,6 +70,10 @@ export default function App() {
                 modules={[FreeMode, Pagination, Navigation]}
                 className="mySwiper"
             >
+                {/* {data.map((el, index) => (
+                    <SingleProduct key={index} data={el} />
+                ))} */}
+
                 <SwiperSlide>
                     <CardNew className='cardnew'>
                         <CardMediaNew className='cardimg'
@@ -49,10 +81,10 @@ export default function App() {
                         />
                         <CardContent>
                             <Typography variant="h5" mb={2} into>
-                                LDV65-SAI400K
+
                             </Typography>
                             <Typography variant="body2">
-                                65'' Floor-standing Digital Signage
+
                             </Typography>
                         </CardContent>
                         <CardActions>

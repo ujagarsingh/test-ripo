@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LoginPage from "./components/LoginPage";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
+import LoginPage from "./pages/LoginPage";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (

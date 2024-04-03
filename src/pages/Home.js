@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Slider from './Slider'
-import Product from './Product'
-import Event from './Event'
-import Details from './Details'
+import Navbar from '../components/Navbar'
+import Slider from '../components/Slider'
+import Product from '../components/Product'
+import Event from '../components/Event'
+import Details from '../components/Details'
 import { Box, Container, Grid } from '@mui/material'
-import Solution from './Solution'
+import Solution from '../components/Solution'
 
 
 function Home() {
