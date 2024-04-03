@@ -14,7 +14,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const pages = ['Products', 'Category'];
-const settings = ['Profile', 'Account', 'Dashboard', 'LogIn'];
+const settings = ['LogIn'];
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
