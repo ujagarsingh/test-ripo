@@ -1,4 +1,3 @@
-@import url('home.css');
 .App {
   text-align: center;
 }
@@ -53,9 +52,175 @@
 }
 
 .dashboardMenuList .MuiListItemText-root {
+  transition: all ease 1s;
   display: none;
+
 }
 
 .dashboardMenuList.active .MuiListItemText-root {
+  transition: all ease 1s;
   display: unset;
+
+}
+
+.MuiListSubheader-root{
+
+  height: 50px;
+}
+
+.MuiButtonBase-root{
+  height: 50px;
+}
+
+.login-bg{
+  width:100%;
+  height:100vh;
+  background-color:#E7E2FF;
+  z-index:-6;
+}
+.container {
+  width: 910px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+}
+
+.login-page {
+  width: 400px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.login-header {
+  background-color:white;
+  width: 800px;
+    height: 70vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    margin-top: 120px;
+    gap: 10px;
+    position:relative;
+}
+
+.login-header::before {
+  content:'';
+  border:1px solid #654FF0;
+  width:50px;
+  height:50px;
+  position:absolute;
+  top:-16px;
+  left:-20px;
+  border-radius:50px;
+  background-color:#654FF0;
+ z-index: index 1;;
+}
+
+.login-header::after {
+  content:'';
+  border:1px solid white;
+  width:50px;
+  height:50px;
+  position:absolute;
+  bottom:-16px;
+  right:-20px;
+  border-radius:50px;
+  background-color:white;
+  
+}
+
+
+.loginInputBox {
+display: flex;
+flex-direction: column;
+gap:10px;
+}
+
+
+
+.username {
+  width:300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color:#F3F1FF;
+  
+}
+.password {
+  width:300px;
+  background-color:#F3F1FF;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.LoginButton {
+  width:100px;
+  height: 40px;
+  margin: auto;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #8473F3;
+  background-color: #8473F3;
+  color: white;
+  font-size: 14px;  
+}
+
+.LoginButton:hover{
+  background-color: transparent;
+  color: #8473F3;
+}
+.googleBox{
+  display:flex;
+  margin: auto;
+}
+
+.googleBox img {
+  width:4%;
+}
+
+.loginPageRightPart {
+  position:relative;
+
+  width: 370px;
+    height: 70vh;
+    background-color: #654FF0;
+
+}
+
+.loginOverlay {
+  position: relative;
+  display: flex;
+  border: 1px solid #897AF1;
+  width: 235px;
+  border-radius: 40px;
+  height: 332px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 75px;
+  margin-left: 73px;
+  background-color: transparent;
+  /* opacity: 0.5; */
+  background-color: #897AF1;
+  opacity: 0.5;
+
+}
+
+
+.loginOverlayImage img {
+  position: absolute;
+    top: 150px;
+    left: 75px;
+    width: 259px;
+    height: 250px;
+    border-radius: 50px;
 }
