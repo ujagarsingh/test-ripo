@@ -31,7 +31,7 @@ function Dashboard() {
 
   const handleClose = () => {
     navigate({
-      pathname: "/login",
+      pathname: "/",
     });
   };
 
