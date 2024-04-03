@@ -5,7 +5,7 @@ import Product from './Product'
 import Event from './Event'
 import Details from './Details'
 import { Box, Container, Grid } from '@mui/material'
-import Leftbar from './Solution'
+import Solution from './Solution'
 
 
 function Home() {
