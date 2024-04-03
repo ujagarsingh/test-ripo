@@ -5,7 +5,7 @@ import Product from './Product'
 import Event from './Event'
 import Details from './Details'
 import { Box, Container, Grid } from '@mui/material'
-import Leftbar from './Leftbar'
+import Leftbar from './Solution'
 
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
     <Box>
       <Navbar />
       <Slider />
-      <Leftbar />
+      <Solution />
       <Product />
       <Event />
       <Details />

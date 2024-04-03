@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box, Container, Grid } from '@mui/material';
 
-export default function LeftBar() {
+export default function Solution() {
 	return (
 		<>
 			<Container className='grid'>
