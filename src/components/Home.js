@@ -3,10 +3,9 @@ import Navbar from './Navbar'
 import Slider from './Slider'
 import Product from './Product'
 import Event from './Event'
-import  Details from './Details'
-import { Box } from '@mui/material'
-import Leftbar from './Leftbar'
-import Rightbar from './Rightbar'
+import Details from './Details'
+import { Box, Container, Grid } from '@mui/material'
+import Leftbar from './Solution'
 
 
 function Home() {
@@ -14,8 +13,7 @@ function Home() {
     <Box>
       <Navbar />
       <Slider />
-      <Leftbar/>
-      <Rightbar/>
+      <Solution />
       <Product />
       <Event />
       <Details />
