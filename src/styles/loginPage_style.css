@@ -1,0 +1,320 @@
+ .login-bg {
+   width: 100%;
+   height: 100vh;
+   background-color: #E7E2FF;
+   z-index: -6;
+   font-family: "Roboto", sans-serif;
+   font-weight: 500;
+   font-style: normal;
+ }
+
+ .loginContainer {
+   margin: auto;
+   display: flex;
+   height: 100vh;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   width: 80%;
+   max-width: 800px;
+   min-width: 400px;
+
+ }
+
+
+ .login-main {
+   width: 100%;
+   z-index: 0;
+   position: relative;
+   box-shadow: 5px 10px 0 #E7E2FF;
+
+ }
+
+
+
+ .loginForm {
+   background-color: white;
+   height: 460px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ .loginFormCover {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   border-radius: 20px;
+   box-shadow: 0 23px 97px -36px;
+ }
+
+ .loginFormCover {
+   display: flex;
+   flex-direction: row;
+   border-radius: 20px;
+   overflow: hidden;
+ }
+
+ .loginFormCover .loginForm {
+   display: flex;
+   flex: 1;
+ }
+
+ .loginFormCover .loginFormImage {
+   display: flex;
+   flex: 1;
+ }
+
+ .login-main::before {
+   content: '';
+   border: 1px solid #654FF0;
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   top: -18px;
+   left: -20px;
+   border-radius: 50px;
+   background-color: #654FF0;
+   z-index: -1;
+ }
+
+ .login-main::after {
+   content: '';
+   border: 1px solid white;
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   bottom: -20px;
+   right: -25px;
+   border-radius: 50px;
+   background-color: white;
+
+   z-index: -1;
+ }
+
+
+ .loginInputBox {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 0 60px;
+ }
+
+
+
+ .username {
+   position: relative;
+   width: 260px;
+   height: 35px;
+   padding: 0 0 0 30px;
+   font-size: 18px;
+   border: none;
+   border-radius: 10px;
+   background-color: #F3F1FF;
+ }
+
+ .password {
+   position: relative;
+   width: 260px;
+   height: 35px;
+   padding: 0 0 0 30px;
+   font-size: 18px;
+   border: none;
+   border-radius: 10px;
+   background-color: #F3F1FF;
+ }
+
+ .LoginButton {
+   width: 115px;
+   height: 35px;
+   margin: auto;
+   border-radius: 10px;
+   border: none;
+   background-color: #8875F3;
+   color: white;
+   cursor: pointer;
+ }
+
+ .LoginButton:hover {
+   background-color: transparent;
+   color: #8473F3;
+   border: 1px solid #8473F3;
+ }
+
+
+ .googleBox {
+
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   gap: 7px;
+   align-items: center;
+
+ }
+
+ .googleBox img {
+   width: 36px;
+ }
+
+ .loginFormImage {
+   height: 460px;
+   background-color: #6D58F1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+ }
+
+
+ .loginOverlay {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+   background: rgba(255, 255, 255, .2);
+   border-radius: 20px;
+ }
+
+
+ .girlimage {
+   /* position: absolute;
+   width: 200px;
+   transform: translate(-178px, -47px); */
+ }
+
+ .login-icon {
+   width: 45px;
+   position: absolute;
+   transform: translate(-228px, 10px);
+ }
+
+ .login-username {
+   width: 290px;
+   display: flex;
+   position: relative;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin: auto;
+
+ }
+
+ .login-password {
+   width: 290px;
+   display: flex;
+   position: relative;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin: auto;
+
+ }
+
+ .MuiSvgIcon-root {
+   position: absolute;
+   left: 7px;
+   top: 6px;
+   font-size: 22px !important;
+ }
+
+ /* Login Form Start */
+ .inputField {
+   width: 100%;
+ }
+
+ .inputField .MuiFormControl-root {
+   width: 100%;
+ }
+
+ .inputField .MuiInputAdornment-root {
+   margin-right: 38px;
+ }
+
+ .login_footer .login_now {}
+
+ .googleLoginBox {
+   width: 100%;
+ }
+
+ .googleLoginBox button {
+   width: 100%;
+   border-radius: 10px;
+ }
+
+ .googleLoginBox button img {
+   width: 25px;
+   height: 25px;
+ }
+
+ .loginTitle {
+   position: relative;
+ }
+
+ .loginTitle::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 1px;
+   background: #dadadd;
+   left: 0;
+   right: 0;
+   top: 50%;
+ }
+
+ .loginTitleInner {
+   display: inline-block;
+   padding: 0 5px;
+   background: #fff;
+   z-index: 1;
+   position: relative;
+ }
+
+ .loginHeader {
+   margin-bottom: 25px;
+ }
+
+ .loginHeader .title {
+   padding: 0;
+   margin: 0;
+   font-size: 30px;
+   font-weight: bold;
+ }
+
+ .loginHeader .subTitle {
+   padding: 0;
+   margin: 0;
+ }
+
+
+ .loginOverlayImage {
+   width: 258px;
+   height: 70%;
+   display: flex;
+   align-items: end;
+   position: relative;
+   z-index: 3;
+ }
+
+ .loginFormImageBG {
+   overflow: hidden;
+   width: inherit;
+   height: inherit;
+   position: absolute;
+   z-index: 1;
+   opacity: .2;
+ }
+
+ .loginFormImageBG img {
+   width: 100%;
+   height: 100%;
+ }
+
+ .loginOverlayImage img {
+   width: auto;
+   height: 242px;
+   z-index: 1;
+ }
+
