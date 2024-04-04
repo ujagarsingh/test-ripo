@@ -10,18 +10,18 @@ import { Box } from '@mui/material';
 function Slider() {
     return (
         <Box>
-            <Swiper
+            <Swiper 
                 spaceBetween={1}
+                loop={true}
                 centeredSlides={true}
                 autoplay={{
                     delay: 4500,
                     disableOnInteraction: false,
-                    Loop: true,
                 }}
                 pagination={{
                     clickable: true,
                 }}
-                Navigation={true}
+                navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >

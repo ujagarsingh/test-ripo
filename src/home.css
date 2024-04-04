@@ -1,6 +1,110 @@
+.img {
+    width: 5%;
+    margin-right: 70px;
+}
+
+.homeNavbar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1) !important;
+    background-color: rgba(0, 0, 0, .15) !important;
+}
+
+.homeNavbar :hover {
+    background-color: #fff !important;
+    color: #000;
+}
+
+.grid {
+    background-color: #F5F5F5;
+}
+
+.grid .solu_title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 32px;
+    color: #333;
+}
+
+
+.grid:hover .left_first {
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .3); */
+}
+
+.first_up:hover {
+    border-radius: 30px;
+}
+
+.first_up_second:hover {
+    border-radius: 30px;
+}
+
+.bottom_first:hover {
+    border-radius: 30px;
+}
+
+.bottom_second:hover {
+    border-radius: 30px;
+}
+
+.right_first:hover {
+    border-radius: 30px;
+}
+
+
+.bg_product {
+    background-color: #F5F5F5;
+}
+
+.product_title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 32px;
+    color: #333;
+}
+
+.Event_title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 32px;
+    color: #333;
+}
+
+.bg_event {
+    background: url('https://www.dahuasecurity.com/images/en-news-bg.png');
+    padding-bottom: 150px;
+}
+
+.e_CardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
 .swiper-slide {
     width: 300px;
-    height: 375px;
+    height: 75px;
     margin-right: 0;
     box-shadow: none !important;
 }
@@ -26,6 +130,13 @@
     transition: all 2s ease-in-out;
     box-shadow: 5px 2px 3px rgb(96, 96, 96);
 } */
+
+.CardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
 
 .css-lvmkdn-MuiCardMedia-root {
     margin-bottom: 50px;
@@ -62,10 +173,6 @@
 .CardMedia {
     width: 300px !important;
     height: 200px
-}
-
-.bg {
-    background-image: 'https://www.dahuasecurity.com/images/en-news-bg.png';
 }
 
 .h_f {
@@ -169,10 +276,6 @@
     margin-right: 30px;
 }
 
-.img {
-    width: 5%;
-    margin-right: 70px;
-}
 
 .MuiButtonBase-root {
     margin-right: 900px;
@@ -190,14 +293,4 @@
     font-style: italic;
     font-size: 12px;
     font-weight: 200;
-}
-
-.MuiPaper-root:hover .MuiCardContent-root {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-   } 
-
-.grid:hover .images{
-    border-radius: 30px;
 }
