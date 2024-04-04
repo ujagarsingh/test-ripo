@@ -12,6 +12,7 @@ Navigate("/dashboard")
 
   return (
     <div className='login-bg'>
+      <h1>Login test</h1>
     <div className="container">
       <div className='login-main'>
       <div className='login-header'>
