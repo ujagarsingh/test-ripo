@@ -28,7 +28,7 @@ const CardNew = styled(Card)({
 const SingleProduct = (props) => {
     const { image, name, detail } = props.data;
     return (
-        <SwiperSlide>
+        <>
             <CardNew className='cardnew'>
                 <CardMediaNew className='cardimg'
                     image={image}
@@ -50,7 +50,7 @@ const SingleProduct = (props) => {
                     </Link>
                 </CardActions>
             </CardNew>
-        </SwiperSlide>
+        </>
     )
 }
 
