@@ -1,54 +1,98 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import PersonIcon from '@mui/icons-material/Person';
-import LockIcon from '@mui/icons-material/Lock';
+import Person4OutlinedIcon from "@mui/icons-material/Person4Outlined";
+import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
+import { Button, FormControl, Input, InputAdornment } from "@mui/material";
 
 function LoginPage() {
-
-let Navigate = useNavigate()
+  let Navigate = useNavigate();
   const loginHandler = () => {
-Navigate("/dashboard")
-  }
+    Navigate("/dashboard");
+  };
 
   return (
-    <div className='login-bg'>
-    <div className="container">
-      <div className='login-main'>
-      <div className='login-header'>
-        <div className="login-page">
-        <h1>LOGIN</h1>
-        <p>How to i get started lorem ipsum dolor at?</p>
-        <div className="loginInputBox">
-          <div className='login-username'>
-        <input className="username" type="text" startIcon='' placeholder="Username..." />
-<PersonIcon />
-          </div>
-          <div className='login-password'>
-        <input className="password" type="password" startIcon='' placeholder="password..." />
-<LockIcon />
-          </div>
-        <button onClick={()=> loginHandler()} className='LoginButton'>Login Now</button>
-        </div>
-        <p><strong>Login</strong> With Others</p>
-        <div className='googleBox'>
-<img src='https://banner2.cleanpng.com/20240216/sb/transparent-google-logo-google-logo-with-multicolored-g-and-1710875781697.webp'/>
- <p>Login With <strong>Google</strong></p>
-        </div>
-        </div>
-        <div  className='loginPageRightPart'>
-         <div className='loginOverlay'></div>
-         <div className='loginOverlayImage'>
-          <img className='girlimage' src='computer.png'/>
-          <img className='login-icon' src='icon.png'/>
-         </div>
-        </div>
-        </div>
-        </div>
+    <div className="login-bg">
+      <div className="loginContainer">
+        <div className="login-main">
+          <div className="loginFormCover">
+            <div className="loginForm">
+              <div className="loginHeader">
+                <div className="title">LOGIN</div>
+                <div className="subTitle">
+                  How to i get started lorem ipsum dolor at?
+                </div>
+              </div>
+              <div className="loginInputBox">
+                <div className="inputField login-username">
+                  <FormControl variant="standard">
+                    <Input
+                      id="username"
+                      type="text"
+                      startAdornment={
+                        <InputAdornment position="start">
+                          <Person4OutlinedIcon />
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
+                </div>
 
-        </div>
-        </div>
+                <div className="inputField login-password">
+                  <FormControl variant="standard">
+                    <Input
+                      id="username"
+                      type="password"
+                      startAdornment={
+                        <InputAdornment position="start">
+                          <HttpsOutlinedIcon />
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
+                </div>
 
-    
+                <div className="login_footer">
+                  <Button
+                    className="login_now"
+                    onClick={() => loginHandler()}
+                    variant="contained"
+                  >
+                    Login Now
+                  </Button>
+                </div>
+
+                <div className="loginTitle">
+                  <div className="loginTitleInner">
+                    <span>Login</span>With Others
+                  </div>
+                </div>
+
+                <div className="googleLoginBox">
+                  <Button
+                    variant="outlined"
+                    startIcon={
+                      <img src="images/icons/google_icon.svg" alt="google" />
+                    }
+                  >
+                    <span className="loginWidth">Login with</span> <span>google</span>
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="loginFormImage">
+              <div className="loginOverlayImage">
+                <img className="girlimage" src="images/computer.png" alt="vk" />
+                <div className="loginOverlay"></div>
+              </div>
+              <div className="loginFormImageBG">
+                <img src="images/pngwing.png" alt="vk" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
