@@ -1,28 +1,26 @@
-import React, { Fragment, useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
 
-// import required modules
-import { FreeMode, Pagination, Navigation } from 'swiper/modules';
-import { Box, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 
 const CardMediaNew = styled(CardMedia)({
-    height: 140,
-    marginTop: 20,
+    maxWidth:100,
+    height:300,
+    marginTop: 100,
+    margin:'auto'
+
 });
 
 const CardNew = styled(Card)({
-    height: 450,
-    width: 360,
+    // height: 450,
+    width: 330,
     marginTop: 20,
     padding: 2,
-    paddingBottom: 25
+    // paddingBottom: 50
 });
 
 const SingleProduct = (props) => {
@@ -34,18 +32,17 @@ const SingleProduct = (props) => {
                     image={image}
                 />
                 <CardContent>
-                    <Typography variant="h5" mb={2} into>
+                    <Typography variant="h5" className='card_title'>
                         {name}
                     </Typography>
-                    <Typography variant="body2">
+                    <Typography variant="h5" className='card_body'>
                         {detail}
                     </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions className='detail_link'>
                     <Link className='sliderLink'
                         component="button"
-                        variant="body2"
-                    >
+                        variant="body2">
                         Details
                     </Link>
                 </CardActions>

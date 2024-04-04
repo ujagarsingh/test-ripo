@@ -40,7 +40,7 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar className='homeNavbar' position="sticky">
+        <AppBar className='homeNavbar'>
             <Container maxWidth="xl">
                 <Toolbar>
                     <img src="favicon.ico" alt="" className='img' />

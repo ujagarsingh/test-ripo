@@ -11,29 +11,26 @@ export default function Solution() {
 		<Box className='grid'>
 			<Container >
 				<Typography variant='h4' className='solu_title'>Solution</Typography>
-				<Grid container spacing={2}>
+				<Grid container spacing={2} className='grid_1'>
 					<Grid item xs={8}>
-						<Card className='left_first' flex={3} sx={{ maxWidth: 750, marginBottom: 2 }} >
-							<CardMedia
-								sx={{ height: 230 }}
+						<Card className='left_first'>
+							<CardMedia className='left_first_img'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/trans.jpg"
-								position='relative'
 							/>
-							<CardContent>
+							<CardContent className='solu_card_content'>
 								<Typography gutterBottom variant="h5" component="div">
-									Transport
+									Transportation
 								</Typography>
 							</CardContent>
 						</Card >
 						<Grid container spacing={2}>
 							<Grid item xs={6}>
-								<Card className='first_up' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 230 }}
+								<Card className='first_up left_first' >
+									<CardMedia className='first_up'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/cri.jpg"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Critical Infrastructure
 										</Typography>
@@ -41,13 +38,11 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='first_up_second' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 230 }}
+								<Card className='first_up_second left_first'>
+									<CardMedia className='first_up_second'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/bank.png"
-										position='relative'
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography variant="h5" component="div">
 											Bank
 										</Typography>
@@ -55,13 +50,12 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_first' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 150 }}
+								<Card className='bottom_first'>
+									<CardMedia className='bottom_first left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Traffic
 										</Typography>
@@ -69,13 +63,12 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_second' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 150 }}
+								<Card className='bottom_second'>
+									<CardMedia className='bottom_second left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/buiding.jpg"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Building
 										</Typography>
@@ -86,13 +79,11 @@ export default function Solution() {
 
 					</Grid>
 					<Grid item xs={4}>
-						<Card className='right_first' flex={2} sx={{ maxWidth: 400 }}>
-							<CardMedia
-								sx={{ height: 640 }}
+						<Card className='right_first'>
+							<CardMedia className='right_first left_first'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/retain.jpg"
-								position='relative'
 							/>
-							<CardContent>
+							<CardContent className='solu_card_content'>
 								<Typography gutterBottom variant="h5" component="div">
 									Retail
 								</Typography>

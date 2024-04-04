@@ -1,4 +1,3 @@
-import React, { Fragment, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -7,33 +6,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
 
-// import required modules
-import { FreeMode, Pagination, Navigation } from 'swiper/modules';
-import { Box, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
-import styled from '@emotion/styled';
+import { FreeMode, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Box, Typography } from '@mui/material';
 import SingleProduct from './SingleProduct';
 
-
-
-
-
 export default function Product() {
-
-
-	const CardMediaNew = styled(CardMedia)({
-		height: 140,
-		marginTop: 20,
-	});
-
-	const CardNew = styled(Card)({
-		height: 450,
-		width: 360,
-		marginTop: 20,
-		padding: 2,
-		paddingBottom: 25
-	});
-
-
 
 	const data = [
 		{
@@ -42,32 +19,57 @@ export default function Product() {
 			detail: "65'' Floor-standing Digital Signage"
 		},
 		{
-			image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
-			name: 'LDV65-SAI400K',
-			detail: "65'' Floor-standing Digital Signage"
+			image: 'https://material.dahuasecurity.com/product/20180118/SD1A203T-GN_thumb.png',
+			name: 'SDT6C432-4P-GB-APV',
+			detail: "4MP 32X Smart Dual Light Network"
 		},
 		{
-			image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
-			name: 'LDV65-SAI400K',
-			detail: "65'' Floor-standing Digital Signage"
+			image: 'https://material.dahuasecurity.com/uploads/image/20230830/x-spans2.png',
+			name: 'SD1A203T-GN',
+			detail: "2MP 3x Starlight IR PTZ Network C"
 		},
 		{
-			image: 'https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png',
-			name: 'LDV65-SAI400K',
-			detail: "65'' Floor-standing Digital Signage"
+			image: 'https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_06_10573/ProductImage/1_0_01_06_10573_255278020_thumb.png',
+			name: 'SDT6C432-4P-GB-APV',
+			detail: "4MP 32X Smart Dual Light Network"
 		},
+		{
+			image: 'https://material.dahuasecurity.com/uploads/image/20230817/IPC-HFW1239DQ-LED-SAW_3_thumb.png',
+			name: 'F2C-LED',
+			detail: "2MP Entry Full-color Fixed-focal W"
+		},
+		{
+			image: 'https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_20_11257/ProductImage/1_0_01_20_11257_459621471_crop_thumb.png',
+			name: 'CS4218-16ET-135',
+			detail: "4MP 32X Smart Dual Light Network"
+		},
+		{
+			image: 'https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_34_13946/ProductImage/1_0_01_34_13946_50049086_crop_thumb.png',
+			name: 'TPC-AEPT8441-T',
+			detail: "Thermal Anti-Explosion Hybrid PTZ"
+		},
+		{
+			image: 'https://material.dahuasecurity.com/uploads/image/20230817/IPC-HDW1239DT-LED-SAW_11_thumb.png',
+			name: 'T2A-LED',
+			detail: "2MP Entry Full-color Fixed-focal Wi"
+		}
 	]
 	return (
 		<Box className='bg_product'>
 			<Typography variant='h4' className='product_title'>New Products</Typography>
 			<Swiper
-				slidesPerView={6}
+				slidesPerView={4}
 				freeMode={true}
-				pagination={{
-					clickable: true,
+				loop={true}
+				// pagination={{
+				// 	clickable: true,
+				// }}
+				autoplay={{
+					delay: 4500,
+					disableOnInteraction: false,
 				}}
-				Navigation={true}
-				modules={[FreeMode, Pagination, Navigation]}
+				navigation={true}
+				modules={[FreeMode, Pagination, Navigation, Autoplay]}
 				className="mySwiper"
 			>
 				{data.map((el, index) => (
@@ -75,8 +77,224 @@ export default function Product() {
 						<SingleProduct data={el} />
 					</SwiperSlide>
 				))}
+			</Swiper>
+		</Box>
+	);
+}
 
-				<SwiperSlide>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <SwiperSlide>
 					<CardNew className='cardnew'>
 						<CardMediaNew className='cardimg'
 							image="https://material.dahuasecurity.com/uploads/image/20221228/DHI-LDV65-SAI400K_1_thumb.png"
@@ -86,10 +304,10 @@ export default function Product() {
 
 							</Typography>
 							<Typography variant="body2">
-
+							
 							</Typography>
-						</CardContent>
-						<CardActions>
+							</CardContent>
+							<CardActions>
 							<Link className='sliderLink'
 								component="button"
 								variant="body2"
@@ -259,8 +477,4 @@ export default function Product() {
 							</Link>
 						</CardActions>
 					</CardNew>
-				</SwiperSlide>
-			</Swiper>
-		</Box>
-	);
-}
+				</SwiperSlide> */}
