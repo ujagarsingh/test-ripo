@@ -7,12 +7,13 @@ import { Box, Container, Grid } from '@mui/material';
 
 export default function Solution() {
 	return (
-		<>
-			<Container className='grid'>
-				<Typography variant='h4' fontWeight={700} textAlign='center' mt={5} mb={4} color={'black'}>Solution</Typography>
+
+		<Box className='grid'>
+			<Container >
+				<Typography variant='h4' className='solu_title'>Solution</Typography>
 				<Grid container spacing={2}>
 					<Grid item xs={8}>
-						<Card  className='images' flex={3} sx={{ maxWidth: 750, marginBottom: 2 }} >
+						<Card className='left_first' flex={3} sx={{ maxWidth: 750, marginBottom: 2 }} >
 							<CardMedia
 								sx={{ height: 230 }}
 								image="https://material.dahuasecurity.com/uploads/image/20230207/trans.jpg"
@@ -26,7 +27,7 @@ export default function Solution() {
 						</Card >
 						<Grid container spacing={2}>
 							<Grid item xs={6}>
-								<Card className='images' flex={3} sx={{ maxWidth: 400 }} >
+								<Card className='first_up' flex={3} sx={{ maxWidth: 400 }} >
 									<CardMedia
 										sx={{ height: 230 }}
 										image="https://material.dahuasecurity.com/uploads/image/20230207/cri.jpg"
@@ -40,35 +41,35 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='images' flex={3} sx={{ maxWidth: 400 }} >
+								<Card className='first_up_second' flex={3} sx={{ maxWidth: 400 }} >
 									<CardMedia
 										sx={{ height: 230 }}
-										image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
-										position='relative'
-									/>
-									<CardContent>
-										<Typography variant="h5" component="div">
-											Traffic
-										</Typography>
-									</CardContent>
-								</Card>
-							</Grid>
-							<Grid item xs={6}>
-								<Card className='images' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 150 }}
 										image="https://material.dahuasecurity.com/uploads/image/20230207/bank.png"
 										position='relative'
 									/>
 									<CardContent>
-										<Typography gutterBottom variant="h5" component="div">
+										<Typography variant="h5" component="div">
 											Bank
 										</Typography>
 									</CardContent>
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='images' flex={3} sx={{ maxWidth: 400 }} >
+								<Card className='bottom_first' flex={3} sx={{ maxWidth: 400 }} >
+									<CardMedia
+										sx={{ height: 150 }}
+										image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
+										position='relative'
+									/>
+									<CardContent>
+										<Typography gutterBottom variant="h5" component="div">
+											Traffic
+										</Typography>
+									</CardContent>
+								</Card>
+							</Grid>
+							<Grid item xs={6}>
+								<Card className='bottom_second' flex={3} sx={{ maxWidth: 400 }} >
 									<CardMedia
 										sx={{ height: 150 }}
 										image="https://material.dahuasecurity.com/uploads/image/20230207/buiding.jpg"
@@ -85,7 +86,7 @@ export default function Solution() {
 
 					</Grid>
 					<Grid item xs={4}>
-						<Card className='images' flex={2} sx={{ maxWidth: 400 }}>
+						<Card className='right_first' flex={2} sx={{ maxWidth: 400 }}>
 							<CardMedia
 								sx={{ height: 640 }}
 								image="https://material.dahuasecurity.com/uploads/image/20230207/retain.jpg"
@@ -100,60 +101,6 @@ export default function Solution() {
 					</Grid>
 				</Grid>
 			</Container>
-
-			{/* <Container>
-
-
-                <Card
-                    sx={{ maxWidth: 400, marginTop: 2, marginBottom: 2 }} >
-                    <CardMedia
-                        sx={{ height: 230 }}
-                        image="https://material.dahuasecurity.com/uploads/image/20230207/cri.jpg"
-                        position='relative'
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Critical Infrastructure
-                        </Typography>
-                    </CardContent>
-                </Card>
-                <Card sx={{ maxWidth: 400 }} >
-                    <CardMedia
-                        sx={{ height: 150 }}
-                        image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
-                        position='relative'
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Traffic
-                        </Typography>
-                    </CardContent>
-                </Card>
-                <Card sx={{ maxWidth: 400, marginTop: 2, marginBottom: 2 }} >
-                    <CardMedia
-                        sx={{ height: 150 }}
-                        image="https://material.dahuasecurity.com/uploads/image/20230207/bank.png"
-                        position='relative'
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Bank
-                        </Typography>
-                    </CardContent>
-                </Card>
-                <Card sx={{ maxWidth: 400, }} >
-                    <CardMedia
-                        sx={{ height: 230 }}
-                        image="https://material.dahuasecurity.com/uploads/image/20230207/buiding.jpg"
-                        position='relative'
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Building
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Container > */}
-		</>
+		</Box>
 	);
 }

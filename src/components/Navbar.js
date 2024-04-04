@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const pages = ['Products', 'Category',];
-const settings = ['LogIn'];
+// const settings = ['LogIn'];
 
 function ResponsiveAppBar() {
 
@@ -40,9 +40,9 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar className='homeNavbar' position="sticky">
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar>
                     <img src="favicon.ico" alt="" className='img' />
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -81,6 +81,9 @@ function ResponsiveAppBar() {
                         </Menu>
                     </Box>
 
+
+
+
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
@@ -93,8 +96,6 @@ function ResponsiveAppBar() {
                         ))}
                     </Box>
                     <Button color="inherit" onClick={() => LoginHandler()}>Login</Button>
-
-
                 </Toolbar>
             </Container>
         </AppBar>
