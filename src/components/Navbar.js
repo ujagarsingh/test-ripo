@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const pages = ['Products', 'Category',];
-// const settings = ['LogIn'];
+const settings = ['LogIn'];
 
 function ResponsiveAppBar() {
 
@@ -43,7 +43,7 @@ function ResponsiveAppBar() {
         <AppBar className='homeNavbar'>
             <Container maxWidth="xl">
                 <Toolbar>
-                    <img src="favicon.ico" alt="" className='img' />
+                    <img src="images/favicon.ico" alt="" className='img' />
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"

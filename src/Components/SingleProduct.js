@@ -4,14 +4,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
 
-import { Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Link, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 
 const CardMediaNew = styled(CardMedia)({
-    maxWidth:100,
-    height:300,
+    maxWidth: 100,
+    height: 300,
     marginTop: 100,
-    margin:'auto'
+    margin: 'auto'
 
 });
 
@@ -27,24 +27,20 @@ const SingleProduct = (props) => {
     const { image, name, detail } = props.data;
     return (
         <>
-            <CardNew className='cardnew'>
-                <CardMediaNew className='cardimg'
+            <CardNew className='product_card'>
+                <CardMediaNew className='product_image'
                     image={image}
                 />
                 <CardContent>
-                    <Typography variant="h5" className='card_title'>
+                    <Typography variant="h5" className='product_content'>
                         {name}
                     </Typography>
-                    <Typography variant="h5" className='card_body'>
+                    <Typography variant="h5" className='product_body'>
                         {detail}
                     </Typography>
                 </CardContent>
                 <CardActions className='detail_link'>
-                    <Link className='sliderLink'
-                        component="button"
-                        variant="body2">
-                        Details
-                    </Link>
+                    <Button className='detail_innerlink' variant="text">Details</Button>
                 </CardActions>
             </CardNew>
         </>

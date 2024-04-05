@@ -8,25 +8,25 @@ import { Box, Container, Grid } from '@mui/material';
 export default function Solution() {
 	return (
 
-		<Box className='grid'>
+		<Box className='Solution_grid'>
 			<Container >
 				<Typography variant='h4' className='solu_title'>Solution</Typography>
-				<Grid container spacing={2} className='grid_1'>
+				<Grid container spacing={2} className='Solution_grid_1'>
 					<Grid item xs={8}>
-						<Card className='left_first'>
-							<CardMedia className='left_first_img'
+						<Card className='Solution_left_first'>
+							<CardMedia className='Solution_left_first_img'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/trans.jpg"
 							/>
 							<CardContent className='solu_card_content'>
-								<Typography gutterBottom variant="h5" component="div">
+								<Typography  className='solu_card_title'gutterBottom variant="h5" component="div">
 									Transportation
 								</Typography>
 							</CardContent>
 						</Card >
 						<Grid container spacing={2}>
 							<Grid item xs={6}>
-								<Card className='first_up left_first' >
-									<CardMedia className='first_up'
+								<Card className='Solution_first_up Solution_left_first' >
+									<CardMedia className='Solution_first_up first_up'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/cri.jpg"
 
 									/>
@@ -38,8 +38,8 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='first_up_second left_first'>
-									<CardMedia className='first_up_second'
+								<Card className='Solution_first_up_second Solution_left_first'>
+									<CardMedia className='Solution_first_up_second'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/bank.png"
 									/>
 									<CardContent className='solu_card_content'>
@@ -50,8 +50,8 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_first'>
-									<CardMedia className='bottom_first left_first'
+								<Card className='Solution_bottom_first'>
+									<CardMedia className='Solution_bottom_first Solution_left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
 
 									/>
@@ -63,8 +63,8 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_second'>
-									<CardMedia className='bottom_second left_first'
+								<Card className='Solution_bottom_second'>
+									<CardMedia className='Solution_bottom_second Solution_left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/buiding.jpg"
 
 									/>
@@ -79,8 +79,8 @@ export default function Solution() {
 
 					</Grid>
 					<Grid item xs={4}>
-						<Card className='right_first'>
-							<CardMedia className='right_first left_first'
+						<Card className='Solution_right_first'>
+							<CardMedia className='Solution_right_first Solution_left_first'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/retain.jpg"
 							/>
 							<CardContent className='solu_card_content'>
