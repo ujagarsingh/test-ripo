@@ -1,4 +1,11 @@
-.img {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Start*/
+
+.homeNavbar img {
     width: 5%;
     margin-right: 70px;
 }
@@ -6,18 +13,28 @@
 .homeNavbar {
     box-shadow: 0 4px 12px rgba(0, 0, 0, .1) !important;
     background-color: rgba(0, 0, 0, .15) !important;
+    position: fixed !important;
+    /* color: #333 !important; */
 }
 
-.homeNavbar :hover {
+.scrolling .homeNavbar,
+.homeNavbar:hover {
     background-color: #fff !important;
-    color: #000;
+    color: #000 !important;
 }
 
-.grid {
+/* Navbar End */
+
+
+
+/* Solution Start */
+
+
+.Solution_grid {
     background-color: #F5F5F5;
 }
 
-.grid .solu_title {
+.Solution_grid .solu_title {
     font-size: 34px;
     font-weight: 700;
     text-align: center;
@@ -27,270 +44,507 @@
 }
 
 
-.grid:hover .left_first {
+.Solution_left_first {
+    max-width: 758px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.Solution_left_first_img {
+    height: 280px;
+}
+
+.Solution_first_up {
+    position: relative;
+    max-width: 370px;
+    height: 230px;
+
+}
+
+.solu_card_content {
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    color: white;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+
+.Solution_first_up_second {
+    position: relative;
+    max-width: 370px;
+    height: 230px;
+
+}
+
+.Solution_bottom_first {
+    position: relative;
+    max-width: 370px;
+    height: 150px;
+
+}
+
+.Solution_bottom_second {
+    position: relative;
+    max-width: 370px;
+    height: 150px;
+
+}
+
+.Solution_right_first {
+    position: relative;
+    max-width: 400px;
+    height: 706px;
+}
+
+.Solution_left_first:hover {
     border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.3);
-    /* position: absolute;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.Solution_left_first:hover .solu_card_title {
+    position: absolute;
     width: 100%;
     height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, .3); */
+    top: 10%;
+    left: 10%;
+    /* transform: translate(-50%, -50%); */
 }
 
-.first_up:hover {
-    border-radius: 30px;
-}
+/* Solution End */
 
-.first_up_second:hover {
-    border-radius: 30px;
-}
 
-.bottom_first:hover {
-    border-radius: 30px;
-}
 
-.bottom_second:hover {
-    border-radius: 30px;
-}
-
-.right_first:hover {
-    border-radius: 30px;
-}
-
+/* Product Start */
 
 .bg_product {
-    background-color: #F5F5F5;
+    background-color: #F5F5F5 !important;
 }
 
 .product_title {
-    font-size: 34px;
-    font-weight: 700;
+    font-size: 34px !important;
+    font-weight: 700 !important;
     text-align: center;
     padding-top: 40px;
-    padding-bottom: 32px;
+    margin-bottom: 32px !important;
     color: #333;
 }
 
-.Event_title {
-    font-size: 34px;
-    font-weight: 700;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 32px;
-    color: #333;
+.product_card {
+    padding-bottom: 50px !important;
+    background-color: #F5F5F5 !important;
 }
-
-.bg_event {
-    background: url('https://www.dahuasecurity.com/images/en-news-bg.png');
-    padding-bottom: 150px;
-}
-
-.e_CardContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-
-
-
-
-
 
 .swiper-slide {
     width: 300px;
     height: 75px;
     margin-right: 0;
     box-shadow: none !important;
+    background-color: #F5F5F5 !important;
+
 }
 
-.swiper-slide:hover .sliderLink {
-    border: 1px solid #0e5fac;
-    padding: 15px 65px;
-    background-color: #0e5fac;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-
-.swiper-slide:hover .cardimg {
-    transform: scale(1.3);
-    transition: all 2s ease-in-out;
-}
-
-/* .swiper-slide:hover .cardnew{
-    transform: scale(1);
-    transition: all 2s ease-in-out;
-    box-shadow: 5px 2px 3px rgb(96, 96, 96);
-} */
-
-.CardContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
-
-.css-lvmkdn-MuiCardMedia-root {
-    margin-bottom: 50px;
-}
-
-.css-41l10o-MuiTypography-root {
+.product_content {
     font-size: 16px !important;
+    font-weight: 400 !important;
+    color: rgb(51, 51, 51) !important;
+    margin-bottom: 26px !important;
 }
 
-.css-29sfs-MuiPaper-root-MuiCard-root {
-    padding-bottom: 10px !important;
+.product_body {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: rgb(51, 51, 51) !important;
+    margin-bottom: 26px !important;
 }
 
-.css-dnrpxu-MuiCardActions-root {
+.detail_link {
+    display: flex;
+    padding-bottom: 15px;
+    align-items: center;
+    text-align: center;
     justify-content: center;
 }
 
-.swiper-pagination-bullet {
-    bottom: -13px !important;
+.detail_innerlink {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-decoration: underline !important;
+    margin-bottom: 15px !important;
+    color: #333 !important;
+    text-transform: inherit !important;
 }
 
-.css-gm0pd4-MuiTypography-root {
+
+.swiper-slide:hover .detail_innerlink {
+    border: 1px solid #0e5fac;
+    padding: 6px 55px;
+    background-color: #0e5fac;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: 400;
+}
+
+.swiper-slide:hover .product_image {
+    transform: scale(1.2);
+    transition: all 1s ease-in;
+
+}
+
+.swiper-slide:hover .product_card {
+    box-shadow: 0 0 16px rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+
+/* product End */
+
+
+
+/* Event Start */
+
+
+.bg_event {
+    background: url('https://www.dahuasecurity.com/images/en-news-bg.png');
+    padding-bottom: 150px;
+}
+
+
+.Event_title {
+    font-size: 34px !important;
+    font-weight: 700 !important;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 32px !important;
+    color: #333;
+}
+
+.event {
     display: flex;
-    flex-direction: row;
+    gap: 15px;
+}
+
+.blog_title {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+}
+
+.event_CardHeader {
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(153, 153, 153);
+}
+
+
+
+.event_left_first {
+    width: 600px;
+    height: 410px;
+}
+
+.event_right_up {
+    display: flex;
+    height: 197px;
+}
+
+.event_right_up_media {
+    /* max-width: 300px; */
+    width: 300px;
+    height: 200px;
+}
+
+.event_right_up_media img {
+    width: 50%;
+}
+
+.event__CardContent_up {
+    background-color: #F5F5F5;
+}
+
+.event_Content_up {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.twoImageBox {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+/* .event__CardContent {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
-}
+} */
 
-.card {
+.event__CardContent {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 20px;
+    background-color: #F5F5F5;
 }
 
-.CardMedia {
-    width: 300px !important;
-    height: 200px
+.event_title_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
-.h_f {
+.blog_title {
+    font-size: 25px !important;
+    line-height: 20px !important;
+    font-weight: 700 !important;
+    color: #333;
+}
+
+.event__link {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin-top: 14px !important;
+    text-decoration: none !important;
+}
+
+.eventImageCover {
+    height: 280px;
+    overflow: hidden;
+}
+
+.eventImageCover .event_media {
+    height: 280px;
+    transition: all .5s;
+}
+
+.eventImageCover:hover .event_media {
+    transform: scale(1.2);
+}
+
+.event_left_first:hover .event_media {
+    transform: scale(1.2);
+    margin-bottom: 10px;
+}
+
+.event_left_first:hover .event_media {
+    transform: scale(1.2);
+    margin-bottom: 10px;
+}
+
+.event_left_first:hover .event__CardContent_up {
+    background-color: #fff;
+    padding-bottom: 15px;
+}
+
+.event_left_first:hover .event__link {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+
+.event_right_up:hover .event_right_up_media {
+    transform: scale(1.1);
+    margin-bottom: 10px;
+}
+
+.event_right_up:hover .event__CardContent {
+    background-color: #fff;
+}
+
+.event_right_up:hover .event__link {
+    cursor: pointer !important;
+    text-decoration: underline !important;
+}
+
+
+/* Event End................................................................... */
+
+/* Details Start */
+
+.fotter_nav {
+    display: flex;
+    gap: 30px;
+}
+
+.footer_nav_item {
+    list-style: none;
+}
+
+.footer_link_list {
+    list-style: none;
+    margin-bottom: 5px;
+
+}
+
+.primary_hover {
+    text-decoration: none;
+    color: #fff;
     font-size: 12px;
+    transition: all .8s;
+}
+
+.primary_hover:hover {
+    color: #0e5fac;
+}
+
+.details_box {
+    background-color: #1f2024;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footer_title {
     color: rgb(197, 197, 197);
-    font-weight: 600;
+    font-size: 12px !important;
+    margin-bottom: 20px !important;
 }
 
-.newletter {
+.details_input {
+
+    display: flex;
+    justify-content: center;
+    padding: 55px 0 40px;
+    margin-bottom: 10px;
+    gap: 60px;
+    width: 100%;
+}
+
+.newsletter {
     position: relative;
+    width: 100%;
+    max-width: 231px;
+
 }
 
-.newletter input {
-    height: 40px;
-    width: 240px;
+.newsletter_title {
+    color: #c5c5c5;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.newsletter #outlined-basic {
+    height: 10px;
+    width: 205px;
     background-color: transparent;
     margin: 0;
     border: 1px solid #3c3c42;
 }
 
-.btn {
+.newsletter #outlined-basic:hover {
+    border: inherit !important;
+}
+
+.Button_wrap {
     position: absolute;
-    right: 13px;
-    top: 54px;
-    background: blue;
-    padding: 6px 14px;
+    right: 7px;
+    top: 36px;
+}
+
+.details_btn {
+    background-color: #0e5fac !important;
+    padding: 2px 23px !important;
     color: white;
     font-size: 12px;
+    text-transform: inherit !important;
 }
 
-
-.fotter_f {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin: 10px 0 0px;
-    padding: 70px 0 40px;
-    gap: 26px;
-}
-
-.f_item:a {
-    color: blue;
-}
-
-.f_item {
-    display: flex;
-    flex-direction: column;
-}
-
-.f_item a {
+.newsletter_subtitle {
     font-size: 12px;
-    font-weight: 400;
-    color: white;
-    text-decoration: none;
-    line-height: 1.5;
-}
-
-.sepration {
-    border: 1px solid #3c3c42;
-    /* height: 1px;
-    background-color: #3c3c42; */
-}
-
-.f_l {
-    font-size: 12px;
-    color: #606060;
-}
-
-.heading {
-    color: rgb(197, 197, 197);
-    font-size: 12px !important;
-    margin-bottom: 8px !important;
-}
-
-.chinese {
-    font-size: 12px;
-    color: rgb(96, 96, 96);
-}
-
-.subtitle {
-    font-size: 12px;
-    color: rgb(197, 197, 197);
-    line-height: 1.5;
+    margin-top: 12px;
+    color: #c5c5c5;
     font-weight: 100;
 }
 
-.fotter_s {
+.fotter_body {
+    border: 1px solid #3c3c42;
+    padding: 45px 0;
+}
+
+.fotter_innerbody {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    margin: 80px 0;
 }
 
-.icons {
+.copyright {
+    font-size: 12px;
+    color: #606060;
+    margin-bottom: 16px;
+}
+
+.chinese {
+    display: flex;
+    gap: 15px;
+}
+
+.chinese_a {
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+}
+
+.chinese_b {
+    font-size: 12apx;
+    color: rgb(96, 96, 96);
+}
+
+/* .fotter_icons {
     display: flex;
     gap: 10px;
-}
+    color:red;
+} */
 
-.product {
-    margin-left: 180px;
-    margin-right: 30px;
-}
-
-
-.MuiButtonBase-root {
-    margin-right: 900px;
-}
-
-.MuiPaper-root {
-    position: relative;
-}
-
-.MuiCardContent-root {
-    position: absolute;
-    bottom: -20px;
-    left: 6px;
+.goToTop {
+    width: 50px;
+    height: 50px;
+    background-color: #b2b2b2;
     color: white;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: 200;
+    border-radius: 50%;
+    float: right;
+}
+
+.goToTop:hover {
+    background-color: #0e5fac;
+}
+
+/* Details End */
+
+
+
+/* responsive Start */
+
+@media screen and (min-width: 1024px) {
+    .product_card {
+        height: 260px;
+        width: 400px;
+        background-color: red;
+    }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .gfg-div {
+        width: 400px;
+        height: 400px;
+        background-color: orange;
+        color: black;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .gfg-div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        color: #fff;
+    }
 }
