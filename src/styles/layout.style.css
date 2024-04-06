@@ -35,7 +35,9 @@
   height: 100%;
 }
 
-.admin_page .sidebar {}
+.admin_page .sidebar {
+  
+}
 
 .admin_page .content_area {
   display: flex;
