@@ -17,6 +17,7 @@
     /* color: #333 !important; */
 }
 
+.scrolling .homeNavbar,
 .homeNavbar:hover {
     background-color: #fff !important;
     color: #000 !important;
@@ -211,11 +212,6 @@
     padding-bottom: 150px;
 }
 
-.event__CardContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .Event_title {
     font-size: 34px !important;
@@ -243,9 +239,7 @@
     color: rgb(153, 153, 153);
 }
 
-.event_media {
-    height: 280px;
-}
+
 
 .event_left_first {
     width: 600px;
@@ -283,6 +277,12 @@
     flex-direction: column;
 }
 
+/* .event__CardContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
 .event__CardContent {
     display: flex;
     flex-direction: column;
@@ -314,6 +314,20 @@
     text-decoration: none !important;
 }
 
+.eventImageCover {
+    height: 280px;
+    overflow: hidden;
+}
+
+.eventImageCover .event_media {
+    height: 280px;
+    transition: all .5s;
+}
+
+.eventImageCover:hover .event_media {
+    transform: scale(1.2);
+}
+
 .event_left_first:hover .event_media {
     transform: scale(1.2);
     margin-bottom: 10px;
@@ -326,6 +340,7 @@
 
 .event_left_first:hover .event__CardContent_up {
     background-color: #fff;
+    padding-bottom: 15px;
 }
 
 .event_left_first:hover .event__link {
@@ -387,7 +402,7 @@
 .footer_title {
     color: rgb(197, 197, 197);
     font-size: 12px !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 20px !important;
 }
 
 .details_input {
@@ -396,7 +411,7 @@
     justify-content: center;
     padding: 55px 0 40px;
     margin-bottom: 10px;
-    gap: 35px;
+    gap: 60px;
     width: 100%;
 }
 
@@ -448,10 +463,6 @@
     font-weight: 100;
 }
 
-/* .sepration {
-    border: 1px solid #3c3c42;
-} */
-
 .fotter_body {
     border: 1px solid #3c3c42;
     padding: 45px 0;
@@ -500,7 +511,7 @@
     float: right;
 }
 
-.goToTop:hover{
+.goToTop:hover {
     background-color: #0e5fac;
 }
 
@@ -512,30 +523,28 @@
 
 @media screen and (min-width: 1024px) {
     .product_card {
-       height: 260px;
-       width: 400px;
-       background-color: red;
+        height: 260px;
+        width: 400px;
+        background-color: red;
     }
-   }
-   
-   /* For Tablet View */
-   @media screen and (min-device-width: 768px) 
-    and (max-device-width: 1024px) {
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .gfg-div {
         width: 400px;
         height: 400px;
         background-color: orange;
         color: black;
     }
-   }
-   
-   /* For Mobile Portrait View */
-   @media screen and (max-device-width: 480px) 
-    and (orientation: portrait) {
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
     .gfg-div {
         width: 200px;
         height: 200px;
         background-color: red;
         color: #fff;
     }
-   }
+}

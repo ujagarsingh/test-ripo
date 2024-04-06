@@ -59,15 +59,15 @@ export default function Product() {
 			<Typography variant='h4' className='product_title'>New Products</Typography>
 			<Swiper
 				slidesPerView={4}
-				freeMode={true}
+				freeMode={true}	
 				loop={true}
 				// pagination={{
 				// 	clickable: true,
 				// }}
-				autoplay={{
-					delay: 4500,
-					disableOnInteraction: false,
-				}}
+				// autoplay={{
+				// 	delay: 4500,
+				// 	disableOnInteraction: false,
+				// }}
 				navigation={true}
 				modules={[FreeMode, Pagination, Navigation, Autoplay]}
 				className="mySwiper"

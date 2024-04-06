@@ -9,9 +9,11 @@ function Event() {
                 <Box className='event'>
                     <Box>
                         <Card className='event_left_first'>
-                            <CardMedia className='event_media'
-                                image="https://material.dahuasecurity.com/uploads/soft/20230713/Banner-Dahua-Blog_From-1-Month-to-10-Minutes---Dahua-Revolutionizes-Fire-Safety-Inspection-in-Yunnan-Power-Station.png"
-                            />
+                            <div className='eventImageCover'>
+                                <CardMedia className='event_media'
+                                    image="https://material.dahuasecurity.com/uploads/soft/20230713/Banner-Dahua-Blog_From-1-Month-to-10-Minutes---Dahua-Revolutionizes-Fire-Safety-Inspection-in-Yunnan-Power-Station.png"
+                                />
+                            </div>
                             <CardContent className='event__CardContent_up' >
                                 <Box className='event_Content_up'>
                                     <Typography gutterBottom variant="h5" component="div" className='blog_title'>
@@ -27,7 +29,7 @@ function Event() {
                         </Card >
                     </Box>
 
-                    <Box className='twoImageBox'> 
+                    <Box className='twoImageBox'>
                         <Card className='event_right_up'>
                             <CardMedia className='event_right_up_media'
                                 image="https://material.dahuasecurity.com/uploads/soft/20230531/Banner-Success-Story_AI-and-Time-lapse-Recording-Feature-on-Video-Surveillance-System-for-a-European-Logistics-Hub.jpg"
@@ -66,53 +68,10 @@ function Event() {
                             </Card >
                         </Box>
                     </Box>
-
-
-
-                    {/* -------------------------------------------- */}
-
-                    {/* <Box className='two_image'>
-                        <Card className='event_right_up' >
-                            <CardMedia className='event_right_up_media'
-                                image="https://material.dahuasecurity.com/uploads/soft/20230531/Banner-Success-Story_AI-and-Time-lapse-Recording-Feature-on-Video-Surveillance-System-for-a-European-Logistics-Hub.jpg"
-                            />
-                            <CardContent>
-                                <Box className='event_CardContent'>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Success Story...
-                                    </Typography>
-                                    <CardHeader
-                                        subheader='2023-4-02' />
-                                </Box>
-                                <Link>
-                                    AI and Time-lapse Recording Feature on Video Surveillance System for a European Logistics Hub
-                                </Link>
-                            </CardContent>
-                        </Card >
-                    </Box> */}
                 </Box>
-
             </Container>
         </Box>
     )
 };
 
 export default Event
-{/* <Card className='right_down'>
-                            <CardMedia
-                                sx={{ height: 280 }}
-                                image="https://material.dahuasecurity.com/uploads/soft/20230713/Banner-Dahua-Blog_From-1-Month-to-10-Minutes---Dahua-Revolutionizes-Fire-Safety-Inspection-in-Yunnan-Power-Station.png"
-                                                        />
-                            <CardContent>
-                                <Box className='e_CardContent'>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        BLOG
-                                    </Typography>
-                                    <CardHeader sx={{ fontStyle: 'italic' }}
-                                        subheader='2023-4-02' />
-                                </Box>
-                                <Link sx={{ color: 'black', fontSize: 18, fontWeight: 700, cursor: 'pointer' }}>
-                                    From 1 Month to 10 Minutes: Dahua Revolutionizes Fire Safety Inspection in Yunnan Power Station
-                                </Link>
-                            </CardContent>
-                        </Card > */}
