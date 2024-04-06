@@ -6,6 +6,7 @@ import {
   Typography,
   MenuItem,
   Avatar,
+  Button,
 
 } from "@mui/material";
 import * as React from "react";
@@ -18,19 +19,16 @@ import MenuButton from "../components/MenuButton";
 function AdminLayout({children}) {
 
   let navigate = useNavigate();
-  const [open, setOpen] = React.useState(false);
 
   const StyledToolBar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
   });
 
-  const handleClose = () => {
-    navigate({
-      pathname: "/",
-    });
-  };
-
+  const logoutHandler = () => {
+    navigate("/")
+  }
+ 
   const DashboardList = styled("div")({
     display: "flex",
   });
@@ -40,18 +38,17 @@ function AdminLayout({children}) {
       <AppBar direction="column" position="sticky">
         <StyledToolBar>
           <Typography
-            variant="h6"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            VK Enterprises
+            <img src='images/favicon.png'  alt='icon'/>
           </Typography>
           <StoreIcon sx={{ display: { xs: "block", sm: "none" } }} />
-          <Avatar>
-            <PersonIcon onClick={(e) => setOpen(true)}></PersonIcon>
-          </Avatar>
+          
+        <Button onClick={()=>logoutHandler()} className="logout_btn">Logout</Button>
+          
         </StyledToolBar>
 
-        <Menu
+        {/* <Menu
           id="demo-positioned-menu"
           open={open}
           onClose={(e) => setOpen(false)}
@@ -67,12 +64,12 @@ function AdminLayout({children}) {
           <MenuItem>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
           <MenuItem onClick={handleClose}>Logout</MenuItem>
-        </Menu>
+        </Menu> */}
       </AppBar>
       <div className="admin_page">
         <div className="sidebar">
-          <DashboardList>
-            <DashboardMenu />
+          <DashboardList className="dashboard_list">
+            <DashboardMenu className='dashboard_menu' />
           </DashboardList>
         </div>
         <div className="content_area">

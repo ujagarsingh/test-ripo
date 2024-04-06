@@ -27,9 +27,15 @@
   height: 50px;
 }
 
-/* .MuiButtonBase-root {
+.dashboard_list .MuiButtonBase-root {
   height: 50px;
-} */
+} 
+
+.arrowKeys .MuiButtonBase-root {
+  width: 25px !important;
+  height: 40px;
+}
+
 .admin_page {
   display: flex;
   height: 100%;
@@ -39,11 +45,36 @@
   
 }
 
+.admin_page .MuiList-root {
+  height: 88.7vh;
+}
 .admin_page .content_area {
   display: flex;
   width: 100%;
   overflow: auto;
   height: calc(100% - 50px);
-  flex-direction: column;
+  /* flex-direction: column; */
   margin-top: 46px;
+  flex-wrap: wrap;
+  overflow: scroll;
+  height: 80vh;
+  width: 90%;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.logout_btn {
+color: black !important;
+  font-weight: 600;
+}
+
+.admin_layout .MuiPaper-root {
+  background-color: #FAFBFD;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0 ,0 ,0.2);
+}
+
+.admin_layout img {
+  width: 20%;
 }

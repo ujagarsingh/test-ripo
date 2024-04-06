@@ -18,9 +18,15 @@ import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantity
 import CategoryIcon from "@mui/icons-material/Category";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import MenuButton from "./MenuButton";
+import { useNavigate } from "react-router-dom";
 
 function DashboardMenu() {
   const [openDashMenu, setOpenDashMenu] = useState(true);
+
+  let navigate = useNavigate();
+  const BillHandler = () => {
+navigate("/bill")
+  }
   return (
     <div className={`dashboardMenuList ${openDashMenu ? "active" : ""} `}>
       <List
@@ -72,7 +78,7 @@ function DashboardMenu() {
           <ListItemIcon>
             <CurrencyRupeeIcon />
           </ListItemIcon>
-          <ListItemText primary="Bill" />
+          <ListItemText onClick={()=>BillHandler()} primary="Bill" />
         </ListItemButton>
       </List>
       <MenuButton activeProp={openDashMenu} onClickFun={setOpenDashMenu} />
