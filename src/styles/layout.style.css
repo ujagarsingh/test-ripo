@@ -47,23 +47,23 @@
 
 .admin_page .MuiList-root {
   height: 88.7vh;
+  background-color: white;
+    color: black;
 }
+
 .admin_page .content_area {
-  display: flex;
-  width: 100%;
-  overflow: auto;
-  height: calc(100% - 50px);
-  /* flex-direction: column; */
-  margin-top: 46px;
+    margin-top: 46px;
   flex-wrap: wrap;
   overflow: scroll;
   height: 80vh;
   width: 90%;
-  text-align: center;
   justify-content: center;
-  text-align: center;
 }
 
+.sidebar .MuiListSubheader-root {
+  background-color: #E0F4FF;
+  color: #5569D9;
+}
 
 .logout_btn {
 color: black !important;
@@ -77,4 +77,8 @@ color: black !important;
 
 .admin_layout img {
   width: 20%;
+}
+
+.admin_page .MuiSvgIcon-root {
+  position: sticky;
 }
