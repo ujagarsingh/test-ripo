@@ -1,0 +1,86 @@
+
+.content_area {
+    background-color: white !important;
+   }
+
+.bill_logo img {
+    width: 12%;
+}
+
+.bill_cover {
+    position: relative;
+}
+
+.bill_cover::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        top: 6px;
+        background-color: #FDC80A;
+}
+
+
+
+.bill_cover h1 {
+    position: absolute;
+    right: 120px;
+    font-size: 40px;
+    background-color: white;
+    padding-left: 55px;
+    padding-right: 43px;
+}
+
+
+.bill_address_bar {
+    margin-top: 50px;
+    font-size: 19px;
+}
+.bill_address_bar h2 {
+    font-size: 28px;
+}
+
+
+.bill_address h3 {
+    display: flex;
+    font-size: 18px;
+    justify-content: end;
+}
+.bill_address h3 .invoice {
+   margin-left: 45px;
+   color: #848685;
+}
+.bill_address h3 .date {
+    margin-left: 39px;
+    color: #848685;
+}
+
+.bill_address_bar h5 {
+    margin-bottom: 5px;
+    color: #848685;
+}
+.bill_address_bar h1 {
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+/*  
+bill_cover {
+    position:relative;
+
+}
+bill_cover h1 {
+      
+    
+
+
+}
+
+
+.before { 
+
+}
+
+
+
+
+  */
