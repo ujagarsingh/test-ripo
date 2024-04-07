@@ -4,5 +4,6 @@
 @import url(styles/layout.style.css);
 @import url(styles/dashboard.style.css);
 @import url(styles/ProductList.css);
+@import url(styles/bill_style.css);
 /* resposive */
 @import url(styles/loginpage_responsive.css);
