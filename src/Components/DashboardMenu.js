@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import {
-  AppBar,
-  Menu,
-  Toolbar,
-  Typography,
-  MenuItem,
-  Button,
-  Avatar,
+
   List,
   ListSubheader,
   ListItemButton,
@@ -18,8 +12,14 @@ import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantity
 import CategoryIcon from "@mui/icons-material/Category";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import MenuButton from "./MenuButton";
+import { useNavigate } from 'react-router-dom';
 
 function DashboardMenu() {
+
+  const navigate = useNavigate();
+  const addProduct = () => {
+    navigate("/Product");
+  }
   const [openDashMenu, setOpenDashMenu] = useState(true);
   return (
     <div className={`dashboardMenuList ${openDashMenu ? "active" : ""} `}>
@@ -58,7 +58,7 @@ function DashboardMenu() {
           <ListItemIcon>
             <ProductionQuantityLimitsIcon />
           </ListItemIcon>
-          <ListItemText primary="Product" />
+          <ListItemText primary="Product" onClick={() => addProduct()} />
         </ListItemButton>
 
         <ListItemButton>

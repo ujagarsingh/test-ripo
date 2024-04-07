@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Button, Container, Icon, TextField, Typography } from '@mui/material'
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import SubscriptionsRoundedIcon from '@mui/icons-material/SubscriptionsRounded';
@@ -9,24 +8,34 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useNavigate } from 'react-router-dom';
 
 
-// const detail_data =[
-//     {
-//         title: "Products",
-//         content_1: "Network Cameras",
-//         content_2: "HDCVI Cameras",
-//         content_3: "PTZ Cameras",
-//         content_4: "Thermal Cameras",
-//         content_5: "Explosion-Proof & Anti-Corrosion",
-//         content_6: "Network Recorders",
-//     }
-// ]
+const detail_data =[
+    {
+        title: "Products",
+        content_1: "Network Cameras",
+        content_2: "HDCVI Cameras",
+        content_3: "PTZ Cameras",
+        content_4: "Thermal Cameras",
+        content_5: "Explosion-Proof & Anti-Corrosion",
+        content_6: "Network Recorders",
+    },
+	{
+		title:"Support",
+		content_1: "Network Cameras",
+        content_2: "HDCVI Cameras",
+        content_3: "PTZ Cameras",
+        content_4: "Thermal Cameras",
+        content_5: "Explosion-Proof & Anti-Corrosion",
+        content_6: "Network Recorders",
+	}
+]
 
 function Details() {
 	const navigate = useNavigate();
 
 	const goToTop = () => {
-		navigate('./home.js')
+		navigate('./login')
 	}
+
 	return (
 		<Box className='details_box'>
 			<Container>
@@ -42,6 +51,13 @@ function Details() {
 						<h6 className='newsletter_subtitle'>
 							Enter your email address to receive the latest news & products information</h6>
 					</div>
+
+{/* 					
+				{detail_data.map((el, index) => (
+					<SwiperSlide key={index}>
+						<SingleProduct detail_data={el} />
+					</SwiperSlide>
+				))} */}
 
 					<ul class="fotter_nav">
 						<li class="footer_nav_item">

@@ -4,7 +4,7 @@ import Slider from '../components/Slider'
 import Product from '../components/Product'
 import Event from '../components/Event'
 import Details from '../components/Details'
-import { Box, Container, Grid } from '@mui/material'
+import { Box } from '@mui/material'
 import Solution from '../components/Solution'
 
 
