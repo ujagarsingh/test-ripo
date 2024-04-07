@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import {
+<<<<<<< HEAD
+
+=======
+>>>>>>> bef115b05bc43591cb35c77b987686b3012b34b7
   List,
   ListSubheader,
   ListItemButton,
@@ -11,9 +15,18 @@ import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantity
 import CategoryIcon from "@mui/icons-material/Category";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import MenuButton from "./MenuButton";
+<<<<<<< HEAD
+import { useNavigate } from 'react-router-dom';
+=======
 import { useNavigate } from "react-router-dom";
+>>>>>>> bef115b05bc43591cb35c77b987686b3012b34b7
 
 function DashboardMenu() {
+
+  const navigate = useNavigate();
+  const addProduct = () => {
+    navigate("/Product");
+  }
   const [openDashMenu, setOpenDashMenu] = useState(true);
 
   let navigate = useNavigate();
@@ -57,7 +70,7 @@ navigate("/bill")
           <ListItemIcon>
             <ProductionQuantityLimitsIcon />
           </ListItemIcon>
-          <ListItemText primary="Product" />
+          <ListItemText primary="Product" onClick={() => addProduct()} />
         </ListItemButton>
 
         <ListItemButton>

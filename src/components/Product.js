@@ -64,10 +64,10 @@ export default function Product() {
 				// pagination={{
 				// 	clickable: true,
 				// }}
-				// autoplay={{
-				// 	delay: 4500,
-				// 	disableOnInteraction: false,
-				// }}
+				autoplay={{
+					delay: 4500,
+					disableOnInteraction: false,
+				}}
 				navigation={true}
 				modules={[FreeMode, Pagination, Navigation, Autoplay]}
 				className="mySwiper"
