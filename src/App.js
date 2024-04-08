@@ -7,6 +7,7 @@ import AddProduct from "./pages/AddProduct";
 import ProductList from "./pages/ProducrtList";
 import ViewProduct from "./pages/ViewProduct";
 import Bill from "./pages/Bill";
+import Addbill from "./components/Addbill";
 import EditProduct from "./pages/EditProduct";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/addproduct' element={<AddProduct />} />
         <Route path="/product_list" element={<ProductList />} />
         <Route path="/bill" element={<Bill />} />
+        <Route path="/addbill" element={<Addbill />} />
         <Route path='/EditProduct' element={<EditProduct />} />
         <Route path='/viewProduct' element={<ViewProduct/>}/>
       </Routes>
