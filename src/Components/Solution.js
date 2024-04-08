@@ -8,32 +8,29 @@ import { Box, Container, Grid } from '@mui/material';
 export default function Solution() {
 	return (
 
-		<Box className='grid'>
+		<Box className='Solution_grid'>
 			<Container >
 				<Typography variant='h4' className='solu_title'>Solution</Typography>
-				<Grid container spacing={2}>
+				<Grid container spacing={2} className='Solution_grid_1'>
 					<Grid item xs={8}>
-						<Card className='left_first' flex={3} sx={{ maxWidth: 750, marginBottom: 2 }} >
-							<CardMedia
-								sx={{ height: 230 }}
+						<Card className='Solution_left_first'>
+							<CardMedia className='Solution_left_first_img'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/trans.jpg"
-								position='relative'
 							/>
-							<CardContent>
-								<Typography gutterBottom variant="h5" component="div">
-									Transport
+							<CardContent className='solu_card_content'>
+								<Typography  className='solu_card_title'gutterBottom variant="h5" component="div">
+									Transportation
 								</Typography>
 							</CardContent>
 						</Card >
 						<Grid container spacing={2}>
 							<Grid item xs={6}>
-								<Card className='first_up' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 230 }}
+								<Card className='Solution_first_up Solution_left_first' >
+									<CardMedia className='Solution_first_up first_up'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/cri.jpg"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Critical Infrastructure
 										</Typography>
@@ -41,13 +38,11 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='first_up_second' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 230 }}
+								<Card className='Solution_first_up_second Solution_left_first'>
+									<CardMedia className='Solution_first_up_second'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/bank.png"
-										position='relative'
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography variant="h5" component="div">
 											Bank
 										</Typography>
@@ -55,13 +50,12 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_first' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 150 }}
+								<Card className='Solution_bottom_first'>
+									<CardMedia className='Solution_bottom_first Solution_left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/jiaot.png"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Traffic
 										</Typography>
@@ -69,13 +63,12 @@ export default function Solution() {
 								</Card>
 							</Grid>
 							<Grid item xs={6}>
-								<Card className='bottom_second' flex={3} sx={{ maxWidth: 400 }} >
-									<CardMedia
-										sx={{ height: 150 }}
+								<Card className='Solution_bottom_second'>
+									<CardMedia className='Solution_bottom_second Solution_left_first'
 										image="https://material.dahuasecurity.com/uploads/image/20230207/buiding.jpg"
-										position='relative'
+
 									/>
-									<CardContent>
+									<CardContent className='solu_card_content'>
 										<Typography gutterBottom variant="h5" component="div">
 											Building
 										</Typography>
@@ -86,13 +79,11 @@ export default function Solution() {
 
 					</Grid>
 					<Grid item xs={4}>
-						<Card className='right_first' flex={2} sx={{ maxWidth: 400 }}>
-							<CardMedia
-								sx={{ height: 640 }}
+						<Card className='Solution_right_first'>
+							<CardMedia className='Solution_right_first Solution_left_first'
 								image="https://material.dahuasecurity.com/uploads/image/20230207/retain.jpg"
-								position='relative'
 							/>
-							<CardContent>
+							<CardContent className='solu_card_content'>
 								<Typography gutterBottom variant="h5" component="div">
 									Retail
 								</Typography>

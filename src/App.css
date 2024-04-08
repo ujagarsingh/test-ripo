@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url(styles/dashboard.style.css);
 @import url(styles/loginPage_style.css);
 @import url(styles/home_style.css);
+@import url(styles/layout.style.css);
+@import url(styles/dashboard.style.css);
+@import url(styles/bill_style.css);
+@import url(styles/addBill_style.css);
+@import url(styles/ProductList.css);
+@import url(styles/EditProduct.css);
+@import url(styles/ViewProduct.css);
 /* resposive */
 @import url(styles/loginpage_responsive.css);

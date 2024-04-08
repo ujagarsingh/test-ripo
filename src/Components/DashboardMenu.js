@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import {
-  AppBar,
-  Menu,
-  Toolbar,
-  Typography,
-  MenuItem,
-  Button,
-  Avatar,
   List,
   ListSubheader,
   ListItemButton,
@@ -18,9 +11,29 @@ import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantity
 import CategoryIcon from "@mui/icons-material/Category";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import MenuButton from "./MenuButton";
+import { useNavigate } from "react-router-dom";
 
 function DashboardMenu() {
+
+  let navigate = useNavigate();
+  const addProduct = () => {
+    navigate("/Product");
+  }
+
+  const EditProduct = () => {
+    navigate("/EditProduct");
+  }
+
+  const ViewProduct = () => {
+    navigate("/ViewProduct");
+  }
+
+
   const [openDashMenu, setOpenDashMenu] = useState(true);
+
+  const BillHandler = () => {
+    navigate("/bill")
+  }
   return (
     <div className={`dashboardMenuList ${openDashMenu ? "active" : ""} `}>
       <List
@@ -51,28 +64,28 @@ function DashboardMenu() {
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
-          <ListItemText primary="Client" />
+          <ListItemText primary="Client" onClick={() => ViewProduct()} />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <ProductionQuantityLimitsIcon />
           </ListItemIcon>
-          <ListItemText primary="Product" />
+          <ListItemText primary="Product" onClick={() => addProduct()} />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <CategoryIcon />
           </ListItemIcon>
-          <ListItemText primary="Category" />
+          <ListItemText primary="Category" onClick={() => EditProduct()} />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <CurrencyRupeeIcon />
           </ListItemIcon>
-          <ListItemText primary="Bill" />
+          <ListItemText onClick={() => BillHandler()} primary="Bill" />
         </ListItemButton>
       </List>
       <MenuButton activeProp={openDashMenu} onClickFun={setOpenDashMenu} />

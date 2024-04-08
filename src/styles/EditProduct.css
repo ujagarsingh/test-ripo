@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.EditProduct {
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.EditField_box {
+    margin-top: 50px;
+    width: 500px;
+    height: 100%;
+    background: #fff;
+    padding: 50px;
+    box-shadow: 5px 2px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.submitBtn_cover {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.Edit_input {
+    margin-bottom: 15px !important;
+}
+
+.EditProduct_title {
+    text-align: center;
+    margin: 20px 0 !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
