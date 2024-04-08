@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import AddProduct from "./pages/AddProduct";
 import ProductList from "./pages/ProductList";
 import Bill from "./pages/Bill";
+import Addbill from "./components/Addbill";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/addproduct' element={<AddProduct />} />
         <Route path="/product_list" element={<ProductList />} />
         <Route path="/bill" element={<Bill />} />
+        <Route path="/addbill" element={<Addbill />} />
       </Routes>
     </Router>
   );

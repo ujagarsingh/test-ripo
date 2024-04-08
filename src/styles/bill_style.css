@@ -1,7 +1,15 @@
+/* .bill_container {
+    width: 1050px;
+    margin: auto;
+} */
 
+.bill_container button {
+    float: right;
+    margin-top: 26px;
+}
 .content_area {
     background-color: white !important;
-   }
+}
 
 .bill_logo img {
     width: 12%;
@@ -12,14 +20,27 @@
 }
 
 .bill_cover::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 30px;
-        top: 6px;
-        background-color: #FDC80A;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 6px;
+    background-color: #FDC80A;
 }
 
+.table_list_cover  {
+    width: 1050px !important;
+    margin:auto;
+}
+
+.bill_term_condition_cover {
+    width: 1050px !important;
+    margin:auto;
+}
+.bill_total_cover {
+    width: 1050px !important;
+    margin:auto;
+}
 
 
 .bill_cover h1 {
@@ -33,9 +54,12 @@
 
 
 .bill_address_bar {
+    width: 1050px;
+    margin: auto;
     margin-top: 50px;
     font-size: 19px;
 }
+
 .bill_address_bar h2 {
     font-size: 28px;
 }
@@ -46,10 +70,12 @@
     font-size: 18px;
     justify-content: end;
 }
+
 .bill_address h3 .invoice {
-   margin-left: 45px;
-   color: #848685;
+    margin-left: 45px;
+    color: #848685;
 }
+
 .bill_address h3 .date {
     margin-left: 39px;
     color: #848685;
@@ -59,28 +85,107 @@
     margin-bottom: 5px;
     color: #848685;
 }
+
 .bill_address_bar h1 {
     font-size: 23px;
     margin-bottom: 5px;
 }
-/*  
-bill_cover {
-    position:relative;
-
-}
-bill_cover h1 {
-      
-    
 
 
+.bill_total {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 15px;
 }
 
+.bill_total .sub_total {
+    margin-left: 26px;
+    color: #848685;
+}
 
-.before { 
+.bill_total .tax {
+    margin-left: 15px;
+    color: #848685;
+}
+
+.bill_term_condition_cover h3 {
+    margin-bottom: 5px;
+}
+
+.bill_term_total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bill_term_total p {
+    width: 370px;
+    color: #848685;
+}
+
+
+.bill_term_total h2 {
+    background-color: #FDC80A;
+    padding: 8px 50px 8px 350px;
+}
+
+.bill_term_total h2 span {
+    margin-left: 20px;
+}
+
+
+.bill_payment_cover {
+    width: 1050px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.bill_payment_cover h2 {
+   margin-bottom: 10px;
+}
+
+.bill_payment {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color:#848685;
+}
+
+.bill_payment .account {
+    margin-left: 20px;
+}
+
+.bill_payment .name {
+    margin-left: 23px;
+}
+
+.bill_payment .bank_detail {
+    margin-left: 7px;
+}
+
+.bill_footer {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 70px;
+}
+
+.bill_footer::before{
+    content: '';
+    position: absolute;
+    border-bottom: 3px solid #FDC80A;
+    width: 100%;
+    top: 7px;
+    z-index: -1;
 
 }
 
 
-
-
-  */
+.bill_footer h4 {
+    display: flex;
+    justify-content: end;
+    margin-right: 112px;
+    float: right;
+    background-color: white;
+    padding: 0px 55px 0 55px;
+}
