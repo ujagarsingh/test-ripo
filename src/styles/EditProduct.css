@@ -3,28 +3,13 @@
     padding: 0;
 }
 
-.dataGrid_cover {
-    height: 400;
-    width: 100;
-}
-
-
-.Addbtn {
-    margin-bottom: 10px !important;
-    /* float: right !important; */
-}
-
-.addButton{
-    text-align: right;
-}
-
-.addForm {
+.EditProduct {
     width: 500px;
     max-width: 100%;
     margin: auto;
 }
 
-.textField_box {
+.EditField_box {
     margin-top: 50px;
     width: 500px;
     height: 100%;
@@ -38,11 +23,11 @@
     margin-top: 40px;
 }
 
-.Product_input {
+.Edit_input {
     margin-bottom: 15px !important;
 }
 
-.addProduct_title {
+.EditProduct_title {
     text-align: center;
     margin: 20px 0 !important;
     font-size: 28px !important;
