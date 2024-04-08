@@ -19,10 +19,20 @@ function DashboardMenu() {
   const addProduct = () => {
     navigate("/Product");
   }
+
+  const EditProduct = () => {
+    navigate("/EditProduct");
+  }
+
+  const ViewProduct = () => {
+    navigate("/ViewProduct");
+  }
+
+
   const [openDashMenu, setOpenDashMenu] = useState(true);
 
   const BillHandler = () => {
-navigate("/bill")
+    navigate("/bill")
   }
   return (
     <div className={`dashboardMenuList ${openDashMenu ? "active" : ""} `}>
@@ -54,7 +64,7 @@ navigate("/bill")
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
-          <ListItemText primary="Client" />
+          <ListItemText primary="Client" onClick={() => ViewProduct()} />
         </ListItemButton>
 
         <ListItemButton>
@@ -68,14 +78,14 @@ navigate("/bill")
           <ListItemIcon>
             <CategoryIcon />
           </ListItemIcon>
-          <ListItemText primary="Category" />
+          <ListItemText primary="Category" onClick={() => EditProduct()} />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <CurrencyRupeeIcon />
           </ListItemIcon>
-          <ListItemText onClick={()=>BillHandler()} primary="Bill" />
+          <ListItemText onClick={() => BillHandler()} primary="Bill" />
         </ListItemButton>
       </List>
       <MenuButton activeProp={openDashMenu} onClickFun={setOpenDashMenu} />
