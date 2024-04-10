@@ -41,7 +41,7 @@ function LoginPage() {
               <div className="loginHeader">
                 <div className="title">LOGIN</div>
                 <div className="subTitle">
-                  How to i get started lorem ipsum dolor at? 
+                  How to i get started lorem ipsum dolor at?
                 </div>
                 {error && (
                   <div className="subTitle" style={{ color: "red" }}>
@@ -113,7 +113,6 @@ function LoginPage() {
                 </form>
               </div>
             </div>
-
             <div className="loginFormImage">
               <div className="loginOverlayImage">
                 <img className="girlimage" src="images/computer.png" alt="vk" />

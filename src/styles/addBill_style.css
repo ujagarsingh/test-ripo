@@ -1,8 +1,29 @@
 
 
-.add_bill_form {
+.bill_address_bar .client_address_bar {
+    width:320px;
+    margin-bottom:40px;
+}
+
+.Tax_box {
+    
     display: flex;
-    flex-direction: column;
     text-align: center;
     align-items: center;
+    
+}
+
+.discount_box {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.footer_btn {
+    
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+margin-bottom:60px;
 }

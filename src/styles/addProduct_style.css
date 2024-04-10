@@ -1,0 +1,27 @@
+.addProduct_cover {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.addProductInputBox {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.addProduct_btn {
+    margin-top: 20px;
+}
+
+.addProduct_title {
+    margin-left: 50px !important;
+}
+
+.addProduct_title .MuiSvgIcon-root {
+    font-size: 35px !important;
+cursor: pointer;
+}
