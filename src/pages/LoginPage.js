@@ -10,14 +10,13 @@ import { AuthContext } from "../context/AuthContext";
 function LoginPage() {
   let navigate = useNavigate();
   const [error, setError] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@welcome.com");
+  const [password, setPassword] = useState("admin123");
 
   const { dispatch } = useContext(AuthContext);
 
   const loginHandler = (e) => {
     e.preventDefault();
-    debugger;
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -42,7 +41,7 @@ function LoginPage() {
               <div className="loginHeader">
                 <div className="title">LOGIN</div>
                 <div className="subTitle">
-                  How to i get started lorem ipsum dolor at?
+                  How to i get started lorem ipsum dolor at? 
                 </div>
                 {error && (
                   <div className="subTitle" style={{ color: "red" }}>
