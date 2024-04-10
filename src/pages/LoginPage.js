@@ -60,26 +60,8 @@ function LoginPage() {
                     Login Now
                   </Button>
                 </div>
-
-                <div className="loginTitle">
-                  <div className="loginTitleInner">
-                    <span>Login</span>With Others
-                  </div>
-                </div>
-
-                <div className="googleLoginBox">
-                  <Button
-                    variant="outlined"
-                    startIcon={
-                      <img src="images/icons/google_icon.svg" alt="google" />
-                    }
-                  >
-                    <span className="loginWidth">Login with</span> <span>google</span>
-                  </Button>
-                </div>
               </div>
             </div>
-
             <div className="loginFormImage">
               <div className="loginOverlayImage">
                 <img className="girlimage" src="images/computer.png" alt="vk" />

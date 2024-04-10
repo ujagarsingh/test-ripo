@@ -5,33 +5,72 @@ import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import AdminLayout from '../Layout/AdminLayout';
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 
 
 function ViewProduct() {
     const navigate = useNavigate();
-    const BackHandler = () => {
-        navigate('/Product')
+  
+
+    const addProduceBackHandler = () => {
+        navigate("/product_list")
     }
 
     return (
         <AdminLayout>
-            <Box className='ViewProduct'>
-                <Box className='ViewproductField_box'>
-                    <Box className='Back_cover'>
-                        <Button variant="contained" onClick={() => BackHandler()} className='Back'>Back To Product</Button>
-                    </Box>
-                    <Box className='ViewProduct_box'>
-                        <Typography gutterBottom variant="h5" className='ViewProduct_title'>View Product</Typography>
-                    </Box>
-                    <TextField className='View_input' fullWidth label="Product Name" id="fullWidth" />
-                    <TextField className='View_input' fullWidth label="Product Description" id="fullWidth" />
-                    <TextField className='View_input' fullWidth label="Product Category" id="fullWidth" />
-                    <TextField className='View_input' fullWidth label="ProductPrice" id="fullWidth" />
-                    <TextField className='View_input' fullWidth label="Selling Price" id="fullWidth" />
-                    <TextField className='View_input' fullWidth label="Quantity" id="fullWidth" />
-                </Box>
-            </Box>
+            <Typography className='addProduct_title' variant='h4' >
+      <ArrowBackIosIcon onClick={()=> addProduceBackHandler()}  /> View Product
+    </Typography>
+<div className='view_product_cover'>
+    <Box  className='view_product'>
+        <Typography variant='h5'>product_name = </Typography>
+        <Typography variant='h5'>gagan</Typography>
+    </Box>
+    <Box  className='view_product'>
+    
+        <Typography variant='h5'>product_description = </Typography>
+         
+    
+        <Typography variant='h5'>gagan</Typography>
+    
+    </Box>
+    <Box  className='view_product'>
+    
+        <Typography variant='h5'>product_price = </Typography>
+         
+    
+        <Typography variant='h5'>gagan</Typography>
+    
+    </Box>
+    <Box  className='view_product'>
+    
+        <Typography variant='h5'>selling_price = </Typography>
+         
+    
+        <Typography variant='h5'>gagan</Typography>
+    
+    </Box>
+    <Box  className='view_product'>
+    
+        <Typography variant='h5'>quantity = </Typography>
+         
+    
+        <Typography variant='h5'>gagan</Typography>
+    
+    </Box>
+    <Box  className='view_product'>
+    
+        <Typography variant='h5'>product_category = </Typography>
+         
+    
+        <Typography variant='h5'>gagan</Typography>
+    
+    </Box>
+
+    </div>
+
+
         </AdminLayout>
     )
 }
