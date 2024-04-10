@@ -4,10 +4,10 @@ import LoginPage from "./pages/LoginPage";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import AddProduct from "./pages/AddProduct";
-import ProductList from "./pages/ProducrtList";
+import ProductList from "./pages/ProductList";
 import ViewProduct from "./pages/ViewProduct";
 import Bill from "./pages/Bill";
-import Addbill from "./components/Addbill";
+import AddBill from "./pages/AddBill";
 import EditProduct from "./pages/EditProduct";
 
 function App() {
@@ -18,12 +18,12 @@ function App() {
         <Route path='/product' element={<ProductList />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path='/addproduct' element={<AddProduct />} />
+        <Route path='/addProduct' element={<AddProduct />} />
         <Route path="/product_list" element={<ProductList />} />
         <Route path="/bill" element={<Bill />} />
-        <Route path="/addbill" element={<Addbill />} />
+        <Route path="/addBill" element={<AddBill />} />
         <Route path='/EditProduct' element={<EditProduct />} />
-        <Route path='/viewProduct' element={<ViewProduct/>}/>
+        <Route path='/viewProduct' element={<ViewProduct />} />
       </Routes>
     </Router>
   );

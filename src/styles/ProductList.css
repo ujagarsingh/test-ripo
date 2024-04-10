@@ -1,50 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
-.dataGrid_cover {
-    height: 400;
-    width: 100;
-}
-
-
-.Addbtn {
-    margin-bottom: 10px !important;
-    /* float: right !important; */
-}
-
-.addButton{
-    text-align: right;
-}
-
-.addForm {
-    width: 500px;
-    max-width: 100%;
-    margin: auto;
-}
-
-.textField_box {
+.product_list_btn {
+    display: flex;
+    justify-content: end;
+    margin-right: 50px;
     margin-top: 50px;
-    width: 500px;
-    height: 100%;
-    background: #fff;
-    padding: 50px;
-    box-shadow: 5px 2px 5px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
 }
 
-.submitBtn_cover {
+
+.action_btn {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    cursor: pointer;
     text-align: center;
-    margin-top: 40px;
-}
-
-.Product_input {
-    margin-bottom: 15px !important;
-}
-
-.addProduct_title {
-    text-align: center;
-    margin: 20px 0 !important;
-    font-size: 28px !important;
-    font-weight: 700 !important;
+    align-items: center;
+    justify-content: center;
 }
