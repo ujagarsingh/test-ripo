@@ -5,8 +5,10 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
 
   return (
     <form onSubmit={onSubmitHandler} className="addProduct_cover">
+      <div className='addproduct_title_box'>
+        <div className="add_box">
       <Box className="addProductInputBox">
-        <label>Product Name * </label>
+        <label>Product Name <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -17,7 +19,7 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
         />
       </Box>
       <Box className="addProductInputBox">
-        <label>Description * </label>
+        <label>Description <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -28,7 +30,7 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
         />
       </Box>
       <Box className="addProductInputBox">
-        <label>Purchases Price * </label>
+        <label>Purchases Price <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -38,8 +40,10 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
           variant="outlined"
         />
       </Box>
+      </div>
+      <div className="add_box">
       <Box className="addProductInputBox">
-        <label>Selling Price * </label>
+        <label>Selling Price <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -50,7 +54,7 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
         />
       </Box>
       <Box className="addProductInputBox">
-        <label>Quantity * </label>
+        <label>Quantity <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -62,7 +66,7 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
         />
       </Box>
       <Box className="addProductInputBox">
-        <label>Category * </label>
+        <label>Category <span>*</span> </label>
         <TextField
           size="small"
           onChange={(e) => onChangeHandler(e)}
@@ -72,6 +76,8 @@ const ProductFrm = ({ btnText, onSubmitHandler, productData, onChangeHandler }) 
           variant="outlined"
         />
       </Box>
+      </div>
+      </div>
       <div className="addProduct_btn">
         <Button type="submit" variant="contained" color="success">
           {btnText}

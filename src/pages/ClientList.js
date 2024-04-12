@@ -15,10 +15,14 @@ import { useNavigate } from "react-router-dom";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ProductService from "../services/product.services";
+import clientServices from "../services/client.services";
 
-export default function ProductList() {
-  const [dataList, setDataList] = useState([]);
+
+
+
+const ClientList = () => {
+  
+  const [clientList, setClientList] = useState([]);
   const navigate = useNavigate();
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -32,30 +36,30 @@ export default function ProductList() {
   }));
 
   
-  const getAllProductList = async () => {
-    const data = await ProductService.getAllProducts();
-    setDataList(data);
+  const getAllClientList = async () => {
+    const data = await clientServices.getAllClient();
+    setClientList(data);
   };
   
-  const deleteProductHandler = async (id) => {
-    const data = await ProductService.deleteProduct(id);
-    getAllProductList()
+  const deleteClientHandler = async (id) => {
+    const data = await clientServices.deleteClient(id);
+    getAllClientList()
   };
   
   useEffect(() => {
-    getAllProductList();
+    getAllClientList();
   }, []);
 
   return (
     <AdminLayout
-      title="Product List"
+      title="Client List"
       rightSection={
         <Button
-          onClick={() => navigate("/AddProduct")}
+          onClick={() => navigate("/AddClient")}
           variant="contained"
           color="secondary"
         >
-          Add A Product
+          Add A Client
         </Button>
       }
     >
@@ -65,41 +69,40 @@ export default function ProductList() {
             <TableRow>
               <StyledTableCell align="left">Sr.No.</StyledTableCell>
               <StyledTableCell align="left">id</StyledTableCell>
-              <StyledTableCell align="left">ProductName</StyledTableCell>
-              <StyledTableCell align="left">Description</StyledTableCell>
-              <StyledTableCell align="left">ProductPrice</StyledTableCell>
-              <StyledTableCell align="left">SellingPrice</StyledTableCell>
-              <StyledTableCell align="left">Quantity</StyledTableCell>
-              <StyledTableCell align="left">Category</StyledTableCell>
+              <StyledTableCell align="left">Name</StyledTableCell>
+              <StyledTableCell align="left">Address</StyledTableCell>
+              <StyledTableCell align="left">State</StyledTableCell>
+              <StyledTableCell align="left">City</StyledTableCell>
+              <StyledTableCell align="left">Mobile Phone</StyledTableCell>
               <StyledTableCell align="center">Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {dataList.map((row, index) => (
+            {clientList.map((row, index) => (
               <TableRow
                 key={index}
               >
                 <TableCell align="left">{index + 1}</TableCell>
                 <TableCell align="left">{row?.id}</TableCell>
                 <TableCell align="left">{row?.name}</TableCell>
-                <TableCell align="left">{row?.description}</TableCell>
-                <TableCell align="left">{row?.purchases_price}</TableCell>
-                <TableCell align="left">{row?.selling_price}</TableCell>
-                <TableCell align="left">{row?.quantity}</TableCell>
-                <TableCell align="left">{row?.category_id}</TableCell>
+                <TableCell align="left">{row?.address}</TableCell>
+                <TableCell align="left">{row?.state}</TableCell>
+                <TableCell align="left">{row?.city}</TableCell>
+                <TableCell align="left">{row?.phone}</TableCell>
+
                 <TableCell align="left">
                   <div className="action_btn">
                     <VisibilityOutlinedIcon
                       color="primary"
-                      onClick={() => navigate(`/viewProduct/${row.id}`)}
+                      onClick={() => navigate(`/viewClient/${row.id}`)}
                     />
                     <EditOutlinedIcon
                       color="success"
-                      onClick={() => navigate(`/EditProduct/${row.id}`)}
+                      onClick={() => navigate(`/EditClient/${row.id}`)}
                     />
                     <DeleteIcon
                       color="error"
-                      onClick={() => deleteProductHandler(row.id)}
+                      onClick={() => deleteClientHandler(row.id)}
                     />
                   </div>
                 </TableCell>
@@ -110,4 +113,8 @@ export default function ProductList() {
       </TableContainer>
     </AdminLayout>
   );
+
+ 
 }
+
+export default ClientList

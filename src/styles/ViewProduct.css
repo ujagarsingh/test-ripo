@@ -7,6 +7,19 @@
     justify-content:center;
     gap:20px;
 }
+.view_product_cover .view_product_title {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    align-items:end;
+    justify-content:center;
+    gap:20px;
+}
+
+.product_icon {
+    width:120px;
+    color:green;
+}
 
 .view_product {
     display: flex;

@@ -50,7 +50,7 @@ function DashboardMenu() {
           </ListItemIcon>
           <ListItemText
             primary="Client"
-            onClick={() => navigate("/productList")}
+            onClick={() => navigate("/clientList")}
           />
         </ListItemButton>
 
@@ -70,7 +70,7 @@ function DashboardMenu() {
           </ListItemIcon>
           <ListItemText
             primary="Category"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/categoryList")}
           />
         </ListItemButton>
 
