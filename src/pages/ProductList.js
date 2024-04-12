@@ -1,16 +1,25 @@
-
-import React from 'react';
-import AdminLayout from '../Layout/AdminLayout';
-import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, styled, tableCellClasses } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import DeleteIcon from '@mui/icons-material/Delete';
-
-
+import React, { useEffect, useState } from "react";
+import AdminLayout from "../Layout/AdminLayout";
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  styled,
+  tableCellClasses,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ProductService from "../services/product.services";
 
 export default function ProductList() {
-
+  const [dataList, setDataList] = useState([]);
+  const navigate = useNavigate();
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -22,76 +31,75 @@ export default function ProductList() {
     },
   }));
 
-  function createData(id, ProductName, Description, Category,  ProductPrice, SellingPrice, Quantity, action,) {
-    return { id, ProductName, Description, Category, ProductPrice, SellingPrice, Quantity,  action, };
-  }
+  const deleteProductHandler = async (id) => {
+    const data = await ProductService.deleteProduct(id);
+    console.log(data);
+  };
 
+  const getAllProductList = async () => {
+    const data = await ProductService.getAllProducts();
+    setDataList(data);
+  };
 
-  const rows = [
-    createData(1, 'camera', 'LDV65-SAI400K', 'Floor-standing Digital Signage', 4500, 5200, 1,  ''),
-    createData(2, 'camera', 'SDT6C432-4P-GB-APV', '4MP 32X Smart Dual Light Network', 5000, 6500, 1,  ''),
-    createData(3, 'camera', 'SD1A203T-GN', '2MP 3x Starlight IR PTZ Network C', 10000, 14500, 1,  ''),
-    createData(4, 'camera', 'SDT6C432-4P-GB-APV', '4MP 32X Smart Dual Light Network', 15000, 20850, 1, ''),
-    createData(5, 'camera', 'F2C-LED', '2MP Entry Full-color Fixed-focal W', 2800, 4200, 1, 'Full-color Fixed', ''),
-    createData(6, 'camera', 'CS4218-16ET-135', '4MP 32X Smart Dual Light Network', 7500, 9200, 1,  ''),
-    createData(7, 'camera', 'TPC-AEPT8441-T', 'Thermal Anti-Explosion Hybrid PTZ', 8800, 10200, 1,  ''),
-  ];
-
-  const navigate = useNavigate()
-  // const addProductHandler = () => {
-  //   navigate('/AddProduct')
-  // }
-
-  const ViewProductHandler = () => {
-    navigate("/viewProduct")
-  }
-
-  const editProductHandler =() => {
-    navigate("/EditProduct")
-  }
-
-  const AddProductHandler =() => {
-    navigate("/AddProduct")
-  }
+  useEffect(() => {
+    getAllProductList();
+  }, []);
 
   return (
-    <AdminLayout>
-      <div className='product_list_btn'>
-        <Button onClick={()=>AddProductHandler()} variant='contained' color="secondary">Add A Product</Button>
-      </div>
-      <TableContainer className='table_list_cover'>
+    <AdminLayout
+      title="Product List"
+      rightSection={
+        <Button
+          onClick={() => navigate("/AddProduct")}
+          variant="contained"
+          color="secondary"
+        >
+          Add A Product
+        </Button>
+      }
+    >
+      <TableContainer className="table_list_cover">
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell align='left'>id</TableCell>
+              <StyledTableCell align="left">Sr.No.</StyledTableCell>
+              <StyledTableCell align="left">id</StyledTableCell>
               <StyledTableCell align="left">ProductName</StyledTableCell>
               <StyledTableCell align="left">Description</StyledTableCell>
               <StyledTableCell align="left">ProductPrice</StyledTableCell>
               <StyledTableCell align="left">SellingPrice</StyledTableCell>
               <StyledTableCell align="left">Quantity</StyledTableCell>
               <StyledTableCell align="left">Category</StyledTableCell>
-              <StyledTableCell align="left">Action</StyledTableCell>
+              <StyledTableCell align="center">Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {dataList.map((row, index) => (
               <TableRow
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                key={index}
               >
-                <TableCell align='left'>{row.id}</TableCell>
-                <TableCell align="left">{row.ProductName}</TableCell>
-                <TableCell align="left">{row.Description}</TableCell>
-                <TableCell align="left">{row.ProductPrice}</TableCell>
-                <TableCell align="left">{row.SellingPrice}</TableCell>
-                <TableCell align="left">{row.Quantity}</TableCell>
-                <TableCell align="left">{row.Category}</TableCell>
+                <TableCell align="left">{index + 1}</TableCell>
+                <TableCell align="left">{row?.id}</TableCell>
+                <TableCell align="left">{row?.name}</TableCell>
+                <TableCell align="left">{row?.description}</TableCell>
+                <TableCell align="left">{row?.purchases_price}</TableCell>
+                <TableCell align="left">{row?.selling_price}</TableCell>
+                <TableCell align="left">{row?.quantity}</TableCell>
+                <TableCell align="left">{row?.category_id}</TableCell>
                 <TableCell align="left">
-                  <div className='action_btn'>
-
-                  <VisibilityOutlinedIcon color="primary" onClick={()=> ViewProductHandler()} />
-                  <EditOutlinedIcon color="success" onClick={()=> editProductHandler()} />
-                  <DeleteIcon color="error" />
+                  <div className="action_btn">
+                    <VisibilityOutlinedIcon
+                      color="primary"
+                      onClick={() => navigate(`/viewProduct/${row.id}`)}
+                    />
+                    <EditOutlinedIcon
+                      color="success"
+                      onClick={() => navigate(`/EditProduct/${row.id}`)}
+                    />
+                    <DeleteIcon
+                      color="error"
+                      onClick={() => deleteProductHandler(row.id)}
+                    />
                   </div>
                 </TableCell>
               </TableRow>
@@ -102,12 +110,3 @@ export default function ProductList() {
     </AdminLayout>
   );
 }
-
-
-
-
-
-
-
-
-

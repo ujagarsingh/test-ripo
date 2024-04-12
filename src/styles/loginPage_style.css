@@ -212,14 +212,7 @@
    margin: auto;
 
  }
-
- .MuiSvgIcon-root {
-   position: absolute;
-   left: 7px;
-   top: 6px;
-   font-size: 22px !important;
- }
-
+ 
  /* Login Form Start */
  .inputField {
    width: 100%;
