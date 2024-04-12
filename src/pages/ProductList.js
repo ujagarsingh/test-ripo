@@ -31,19 +31,20 @@ export default function ProductList() {
     },
   }));
 
-  
-  const getAllProductList = async () => {
-    const data = await ProductService.getAllProducts();
-    setDataList(data);
-  };
-  
   const deleteProductHandler = async (id) => {
-    const data = await ProductService.deleteProduct(id);
-    getAllProductList()
+    await ProductService.deleteProduct(id);
   };
-  
+
+  const getAllProductList = () => {
+    const unSub = ProductService.productListener((data) => {
+      setDataList(data);
+    });
+    return unSub;
+  };
+
   useEffect(() => {
-    getAllProductList();
+    const unSub = getAllProductList();
+    return () => unSub();
   }, []);
 
   return (
@@ -76,9 +77,7 @@ export default function ProductList() {
           </TableHead>
           <TableBody>
             {dataList.map((row, index) => (
-              <TableRow
-                key={index}
-              >
+              <TableRow key={index}>
                 <TableCell align="left">{index + 1}</TableCell>
                 <TableCell align="left">{row?.id}</TableCell>
                 <TableCell align="left">{row?.name}</TableCell>

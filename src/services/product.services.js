@@ -8,6 +8,7 @@ import {
   updateDoc,
   deleteDoc,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 
 const productCollectionRef = collection(db, "products");
@@ -43,6 +44,29 @@ class ProductService {
     }
   };
 
+  productListener = (cbFun) => {
+    try {
+      const unSub = onSnapshot(
+        collection(db, "products"),
+        (snapshot) => {
+          const newList = snapshot.docs.map((product) =>
+            ({
+              id: product.id,
+              ...product.data(),
+            })
+          );
+          cbFun(newList);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+      return unSub;
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   getAllProducts = async () => {
     try {
       let list = [];
@@ -51,25 +75,6 @@ class ProductService {
         list.push({ id: product.id, ...product.data() });
       });
       return list;
-      // LISTEN REALTIME
-
-      // let data = [];
-      // const unsub = onSnapshot(
-      //   collection(db, "products"),
-      //   (snapshot) => {
-      //     const newList = snapshot.docs.forEach((product) =>
-      //       data.push({
-      //         id: product.id,
-      //         ...product.data(),
-      //       })
-      //     );
-      //     return newList;
-      //   },
-      //   (error) => {
-      //     alert(error);
-      //   }
-      // );
-      // return { data, unsub };
     } catch (error) {
       alert(error);
     }
