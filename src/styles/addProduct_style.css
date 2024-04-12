@@ -1,20 +1,41 @@
 .addProduct_cover {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    text-align: end;
     justify-content: center;
+    gap:15px;
 }
 
 .addProductInputBox {
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    gap:20px;
 }
 
+.addProductInputBox label span {
+    color:red;
+}
+
+.addproduct_title_box {
+    display: flex;
+    text-align: center;
+    align-items: end;
+    justify-content: space-around;
+}
 .addProduct_btn {
     margin-top: 20px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+
+.add_box {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
 }
 
 .addProduct_title {

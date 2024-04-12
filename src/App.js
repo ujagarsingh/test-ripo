@@ -16,8 +16,18 @@ import ViewProduct from "./pages/ViewProduct";
 import Bill from "./pages/Bill";
 import AddBill from "./pages/AddBill";
 import EditProduct from "./pages/EditProduct";
+import CategoryList from "./pages/CategoryList";
+import AddCategory from "./pages/AddCategory";
+import ViewCategory from "./pages/ViewCategory";
+import EditCategory from "./pages/EditCategory";
+import ClientList from "./pages/ClientList";
+import AddClient from "./pages/AddClient";
+import ViewClient from "./pages/ViewClient";
+import EditClient from "./pages/EditClient";
 
 function App() {
+
+  
 
   const {currentUser} = useContext(AuthContext)
 
@@ -37,6 +47,15 @@ function App() {
         <Route path="/addBill" element={<RequireAuth><AddBill /></RequireAuth>} />
         <Route path='/EditProduct/:id' element={<RequireAuth><EditProduct /></RequireAuth>} />
         <Route path='/viewProduct/:id' element={<RequireAuth><ViewProduct /></RequireAuth>} />
+        <Route path='/viewProduct/:id' element={<RequireAuth><ViewProduct /></RequireAuth>} />
+        <Route path='/categoryList' element={<RequireAuth>< CategoryList /></RequireAuth>} />
+        <Route path='/addCategory' element={<RequireAuth>< AddCategory /></RequireAuth>} />
+        <Route path='/viewCategory/:id' element={<RequireAuth><ViewCategory /></RequireAuth>} />
+        <Route path='/editCategory/:id' element={<RequireAuth><EditCategory /></RequireAuth>} />
+        <Route path='/clientList' element={<RequireAuth><ClientList /></RequireAuth>} />
+        <Route path='/addClient' element={<RequireAuth><AddClient /></RequireAuth>} />
+        <Route path='/viewClient/:id' element={<RequireAuth><ViewClient /></RequireAuth>} />
+        <Route path='/editClient/:id' element={<RequireAuth><EditClient /></RequireAuth>} />
       </Routes>
     </Router>
   );

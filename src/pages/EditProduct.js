@@ -5,9 +5,12 @@ import AdminLayout from "../Layout/AdminLayout";
 import { useParams } from "react-router-dom";
 import ProductFrm from "../components/Frm/ProductFrm";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function EditProduct() {
+  let navigate = useNavigate();
   const { id } = useParams();
+
   const [productData, setProductData] = useState({
     name: "",
     description: "",
@@ -23,10 +26,8 @@ export default function EditProduct() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const res = await ProductService.updateProduct(id, {
-      ...productData,
-      timeStamp: serverTimestamp(),
-    });
+    const res = await ProductService.updateProduct(id, productData);
+    navigate(`/productList`)
   };
 
   const getSingleProduct = useCallback(async () => {
@@ -41,15 +42,6 @@ export default function EditProduct() {
   return (
     <AdminLayout
       title="Edit Product"
-      // rightSection={
-      //   <Button
-      //     onClick={navigate("/AddProduct")}
-      //     variant="contained"
-      //     color="secondary"
-      //   >
-      //     Add A Product
-      //   </Button>
-      // }
     >
       <ProductFrm
         btnText="Update Product"

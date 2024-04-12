@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Box from "@mui/material/Box";
+import { Box, Button, TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import AdminLayout from "../Layout/AdminLayout";
@@ -18,7 +18,6 @@ function ViewProduct() {
 
   const getSingleProduct = useCallback(async () => {
     const data = await productServices.getProduct(id);
-    console.log(data)
     setProductData(data);
   }, [id]);
 
@@ -29,35 +28,40 @@ function ViewProduct() {
   return (
     <AdminLayout title={"View Product"}>
       <div className="view_product_cover">
+        <div className='view_product_title'>
         <Box className="view_product">
-          <Typography variant="h5">Name = </Typography>
-          <Typography variant="h5">{productData.name}</Typography>
-        </Box>
-        <Box className="view_product">
-          <Typography variant="h5">Description = </Typography>
 
-          <Typography variant="h5">{productData.description}</Typography>
+        <h3>Purchases Price = </h3>
+        <h3 className='product_icon'>  {productData.name} </h3>
+        
+         
         </Box>
         <Box className="view_product">
-          <Typography variant="h5">Purchases Price = </Typography>
-
-          <Typography variant="h5">{productData.purchases_price}</Typography>
+        <h3>Description = </h3>
+        <h3 className='product_icon'> {productData.description} </h3>
         </Box>
         <Box className="view_product">
-          <Typography variant="h5">Selling Price = </Typography>
-
-          <Typography variant="h5">{productData.selling_price}</Typography>
+        <h3>Purchases Price = </h3>
+        <h3 className='product_icon'> {productData.purchases_price}  </h3>
+        
         </Box>
         <Box className="view_product">
-          <Typography variant="h5">Quantity = </Typography>
+        <h3>Selling Price = </h3>
+        <h3 className='product_icon'>  {productData.selling_price}  </h3>
+        
 
-          <Typography variant="h5">{productData.quantity}</Typography>
         </Box>
         <Box className="view_product">
-          <Typography variant="h5">Category = </Typography>
-
-          <Typography variant="h5">{productData.category_id}</Typography>
+        <h3>Quantity = </h3>
+        <h3 className='product_icon'>  {productData.quantity}  </h3>
+       
         </Box>
+        <Box className="view_product">
+        <h3>Category = </h3>
+        <h3 className='product_icon'> {productData.category_id}  </h3>
+       
+        </Box>
+        </div>
       </div>
     </AdminLayout>
   );
