@@ -14,26 +14,10 @@ import MenuButton from "./MenuButton";
 import { useNavigate } from "react-router-dom";
 
 function DashboardMenu() {
-
   let navigate = useNavigate();
-  const addProduct = () => {
-    navigate("/Product");
-  }
-
-  const EditProduct = () => {
-    navigate("/EditProduct");
-  }
-
-  const ViewProduct = () => {
-    navigate("/ViewProduct");
-  }
-
 
   const [openDashMenu, setOpenDashMenu] = useState(true);
 
-  const BillHandler = () => {
-    navigate("/bill")
-  }
   return (
     <div className={`dashboardMenuList ${openDashMenu ? "active" : ""} `}>
       <List
@@ -64,28 +48,37 @@ function DashboardMenu() {
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
-          <ListItemText primary="Client" onClick={() => ViewProduct()} />
+          <ListItemText
+            primary="Client"
+            onClick={() => navigate("/productList")}
+          />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <ProductionQuantityLimitsIcon />
           </ListItemIcon>
-          <ListItemText primary="Product" onClick={() => addProduct()} />
+          <ListItemText
+            primary="Product"
+            onClick={() => navigate("/productList")}
+          />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <CategoryIcon />
           </ListItemIcon>
-          <ListItemText primary="Category" onClick={() => EditProduct()} />
+          <ListItemText
+            primary="Category"
+            onClick={() => navigate("/dashboard")}
+          />
         </ListItemButton>
 
         <ListItemButton>
           <ListItemIcon>
             <CurrencyRupeeIcon />
           </ListItemIcon>
-          <ListItemText onClick={() => BillHandler()} primary="Bill" />
+          <ListItemText primary="Bill" onClick={() => navigate("/bill")} />
         </ListItemButton>
       </List>
       <MenuButton activeProp={openDashMenu} onClickFun={setOpenDashMenu} />

@@ -22,6 +22,5 @@
 }
 
 .addProduct_title .MuiSvgIcon-root {
-    font-size: 35px !important;
-cursor: pointer;
+    cursor: pointer;
 }

@@ -6,9 +6,12 @@ import { Button, FormControl, Input, InputAdornment } from "@mui/material";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function LoginPage() {
   let navigate = useNavigate();
+  const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("admin@welcome.com");
   const [password, setPassword] = useState("admin123");
@@ -21,16 +24,17 @@ function LoginPage() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         dispatch({ type: "LOGIN", payload: user });
         navigate("/dashboard");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
         setError(true);
       });
   };
+
+  const showPassword = () => [setShowPass(!showPass)];
 
   return (
     <div className="login-bg">
@@ -73,10 +77,21 @@ function LoginPage() {
                         onChange={(e) => setPassword(e.target.value)}
                         id="password"
                         autoComplete="off"
-                        type="password"
+                        type={showPass ? "text" : "password"}
                         startAdornment={
                           <InputAdornment position="start">
                             <HttpsOutlinedIcon />
+                          </InputAdornment>
+                        }
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <button type="button" onClick={showPassword}>
+                              {showPass ? (
+                                <VisibilityIcon />
+                              ) : (
+                                <VisibilityOffIcon />
+                              )}
+                            </button>
                           </InputAdornment>
                         }
                       />

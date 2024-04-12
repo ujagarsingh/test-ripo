@@ -29,23 +29,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/dashboard"
-          element={
-            <RequireAuth>
-              <Dashboard />
-            </RequireAuth>
-          }
-        />
-        <Route path='/product' element={<ProductList />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path='/addProduct' element={<AddProduct />} />
-        <Route path="/product_list" element={<ProductList />} />
-        <Route path="/bill" element={<Bill />} />
-        <Route path="/addBill" element={<AddBill />} />
-        <Route path='/EditProduct' element={<EditProduct />} />
-        <Route path='/viewProduct' element={<ViewProduct />} />
+        <Route path="/dashboard" element={ <RequireAuth><Dashboard /></RequireAuth> } />
+        <Route path='/addProduct' element={<RequireAuth><AddProduct /></RequireAuth>} />
+        <Route path="/productList" element={<RequireAuth><ProductList /></RequireAuth>} />
+        <Route path="/bill" element={<RequireAuth><Bill /></RequireAuth>} />
+        <Route path="/addBill" element={<RequireAuth><AddBill /></RequireAuth>} />
+        <Route path='/EditProduct/:id' element={<RequireAuth><EditProduct /></RequireAuth>} />
+        <Route path='/viewProduct/:id' element={<RequireAuth><ViewProduct /></RequireAuth>} />
       </Routes>
     </Router>
   );
