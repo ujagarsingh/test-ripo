@@ -35,7 +35,7 @@ function AdminLayout({ children, title, rightSection }) {
       <AppBar direction="column" position="sticky">
         <StyledToolBar>
           <Typography sx={{ display: { xs: "none", sm: "block" } }}>
-            <img src="images/favicon.png" alt="icon" />
+            <img src="/images/favicon.png" alt="icon" />
           </Typography>
           <StoreIcon sx={{ display: { xs: "block", sm: "none" } }} />
 
