@@ -22,8 +22,9 @@ export default function AddProduct() {
   };
 
   const onSubmitHandler = async (e) => {
+    debugger;
     e.preventDefault();
-    const res = await ProductService.addProduct({
+    await ProductService.addProduct({
       ...productData,
       timeStamp: serverTimestamp(),
     });
@@ -32,7 +33,7 @@ export default function AddProduct() {
 
   return (
     <AdminLayout
-    title="Add New Product"
+      title="Add New Product"
     >
       <ProductFrm
         btnText="Create Product"
