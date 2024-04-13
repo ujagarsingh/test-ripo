@@ -17,11 +17,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import clientServices from "../services/client.services";
 
-
-
-
 const ClientList = () => {
-  
   const [clientList, setClientList] = useState([]);
   const navigate = useNavigate();
 
@@ -35,19 +31,20 @@ const ClientList = () => {
     },
   }));
 
-  
-  const getAllClientList = async () => {
-    const data = await clientServices.getAllClient();
-    setClientList(data);
-  };
-  
   const deleteClientHandler = async (id) => {
-    const data = await clientServices.deleteClient(id);
-    getAllClientList()
+    await clientServices.deleteClient(id);
   };
-  
+
+  const getAllClientList = () => {
+    const unSub = clientServices.clientListener((data) => {
+      setClientList(data);
+    });
+    return unSub;
+  };
+
   useEffect(() => {
-    getAllClientList();
+    const unSub = getAllClientList();
+    return () => unSub();
   }, []);
 
   return (
@@ -79,9 +76,7 @@ const ClientList = () => {
           </TableHead>
           <TableBody>
             {clientList.map((row, index) => (
-              <TableRow
-                key={index}
-              >
+              <TableRow key={index}>
                 <TableCell align="left">{index + 1}</TableCell>
                 <TableCell align="left">{row?.id}</TableCell>
                 <TableCell align="left">{row?.name}</TableCell>
@@ -113,8 +108,6 @@ const ClientList = () => {
       </TableContainer>
     </AdminLayout>
   );
+};
 
- 
-}
-
-export default ClientList
+export default ClientList;

@@ -6,11 +6,12 @@ import { useParams } from "react-router-dom";
 import ProductFrm from "../components/Frm/ProductFrm";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import categoryService from "../services/category.services";
 
 export default function EditProduct() {
   let navigate = useNavigate();
   const { id } = useParams();
-
+  const [dataList, setDataList] = useState([]);
   const [productData, setProductData] = useState({
     name: "",
     description: "",
@@ -26,7 +27,7 @@ export default function EditProduct() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const res = await ProductService.updateProduct(id, productData);
+    await ProductService.updateProduct(id, productData);
     navigate(`/productList`)
   };
 
@@ -39,6 +40,23 @@ export default function EditProduct() {
     getSingleProduct();
   }, [getSingleProduct]);
 
+  
+  const getAllCategoryList = () => {
+    const unSub = categoryService.categoryListener((data) => {
+      const catList = data.map((item) => ({
+        id: item.id,
+        label: item.name,
+      }));
+      setDataList(catList);
+    });
+    return unSub;
+  };
+
+  useEffect(() => {
+    const unSub = getAllCategoryList();
+    return () => unSub();
+  }, []);
+
   return (
     <AdminLayout
       title="Edit Product"
@@ -48,6 +66,7 @@ export default function EditProduct() {
         onSubmitHandler={onSubmitHandler}
         productData={productData}
         onChangeHandler={onChangeHandler}
+        categoryList={dataList}
       />
     </AdminLayout>
   );

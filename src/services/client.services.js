@@ -8,11 +8,12 @@ import {
   updateDoc,
   deleteDoc,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 
 const clientCollectionRef = collection(db, "client");
 
-class Clientservice {
+class ClientService {
   addClient = async (newClient) => {
     try {
       const res = await addDoc(clientCollectionRef, newClient);
@@ -42,6 +43,30 @@ class Clientservice {
       alert(error);
     }
   };
+
+  clientListener = (cbFun) => {
+    try {
+      const unSub = onSnapshot(
+        collection(db, "client"),
+        (snapshot) => {
+          const newList = snapshot.docs.map((client) =>
+            ({
+              id: client.id,
+              ...client.data(),
+            })
+          );
+          cbFun(newList);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+      return unSub;
+    } catch (error) {
+      alert(error);
+    }
+  };
+
 
   getAllClient = async () => {
     try {
@@ -87,4 +112,4 @@ class Clientservice {
   };
 }
 
-export default new Clientservice();
+export default new ClientService();

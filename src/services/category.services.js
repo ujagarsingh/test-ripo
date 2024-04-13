@@ -8,11 +8,12 @@ import {
   updateDoc,
   deleteDoc,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 
 const categoryCollectionRef = collection(db, "category");
 
-class Categoryservice {
+class CategoryService {
   addCategory = async (newCategory) => {
     try {
       const res = await addDoc(categoryCollectionRef, newCategory);
@@ -38,6 +39,29 @@ class Categoryservice {
     try {
       const categoryDoc = doc(db, "category", id);
       await deleteDoc(categoryDoc);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  categoryListener = (cbFun) => {
+    try {
+      const unSub = onSnapshot(
+        collection(db, "category"),
+        (snapshot) => {
+          const newList = snapshot.docs.map((category) =>
+            ({
+              id: category.id,
+              ...category.data(),
+            })
+          );
+          cbFun(newList);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+      return unSub;
     } catch (error) {
       alert(error);
     }
@@ -87,4 +111,4 @@ class Categoryservice {
   };
 }
 
-export default new Categoryservice();
+export default new CategoryService();

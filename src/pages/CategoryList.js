@@ -17,11 +17,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import categoryService from "../services/category.services";
 
-
-
-
 const CategoryList = () => {
-  
   const [dataList, setDataList] = useState([]);
   const navigate = useNavigate();
 
@@ -35,20 +31,29 @@ const CategoryList = () => {
     },
   }));
 
-  
-  const getAllCategoryList = async () => {
-    const data = await categoryService.getAllCategorys();
-    setDataList(data);
-  };
-  
+  // const getAllCategoryList = async () => {
+  //   const data = await categoryService.getAllCategorys();
+  //   setDataList(data);
+  // };
+
   const deleteCategoryHandler = async (id) => {
-    const data = await categoryService.deleteCategory(id);
-    getAllCategoryList()
+    await categoryService.deleteCategory(id);
   };
-  
+
+
+  const getAllCategoryList = () => {
+    const unSub = categoryService.categoryListener((data) => {
+      setDataList(data);
+    });
+    return unSub;
+  };
+
   useEffect(() => {
-    getAllCategoryList();
+    const unSub = getAllCategoryList();
+    return () => unSub();
   }, []);
+
+
 
   return (
     <AdminLayout
@@ -76,9 +81,7 @@ const CategoryList = () => {
           </TableHead>
           <TableBody>
             {dataList.map((row, index) => (
-              <TableRow
-                key={index}
-              >
+              <TableRow key={index}>
                 <TableCell align="left">{index + 1}</TableCell>
                 <TableCell align="left">{row?.id}</TableCell>
                 <TableCell align="left">{row?.name}</TableCell>
@@ -106,8 +109,6 @@ const CategoryList = () => {
       </TableContainer>
     </AdminLayout>
   );
+};
 
- 
-}
-
-export default CategoryList
+export default CategoryList;
