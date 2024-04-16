@@ -223,10 +223,12 @@
  }
 
  .inputField .MuiInputAdornment-root {
-   margin-right: 38px;
+   margin-right: 8px;
  }
 
- .login_footer .login_now {}
+ .login_footer {
+  margin-top:15px;
+ }
 
  .googleLoginBox {
    width: 100%;
@@ -311,3 +313,11 @@
    z-index: 1;
  }
 
+.login-username {
+  margin-bottom: 7px;
+}
+
+ .login-username input {
+  margin-left: 0px;
+    margin-right: 40px;
+ }
