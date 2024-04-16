@@ -78,7 +78,7 @@ function DashboardMenu() {
           <ListItemIcon>
             <CurrencyRupeeIcon />
           </ListItemIcon>
-          <ListItemText primary="Bill" onClick={() => navigate("/bill")} />
+          <ListItemText primary="Bill" onClick={() => navigate("/billList")} />
         </ListItemButton>
       </List>
       <MenuButton activeProp={openDashMenu} onClickFun={setOpenDashMenu} />

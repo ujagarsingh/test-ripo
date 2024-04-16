@@ -24,6 +24,8 @@ import ClientList from "./pages/ClientList";
 import AddClient from "./pages/AddClient";
 import ViewClient from "./pages/ViewClient";
 import EditClient from "./pages/EditClient";
+import BillList from "./pages/Bill_List";
+import EditBill from "./pages/EditBill";
 
 function App() {
 
@@ -43,7 +45,7 @@ function App() {
         <Route path="/dashboard" element={ <RequireAuth><Dashboard /></RequireAuth> } />
         <Route path='/addProduct' element={<RequireAuth><AddProduct /></RequireAuth>} />
         <Route path="/productList" element={<RequireAuth><ProductList /></RequireAuth>} />
-        <Route path="/bill" element={<RequireAuth><Bill /></RequireAuth>} />
+        <Route path="/billList" element={<RequireAuth><BillList /></RequireAuth>} />
         <Route path="/addBill" element={<RequireAuth><AddBill /></RequireAuth>} />
         <Route path='/EditProduct/:id' element={<RequireAuth><EditProduct /></RequireAuth>} />
         <Route path='/viewProduct/:id' element={<RequireAuth><ViewProduct /></RequireAuth>} />
@@ -56,6 +58,7 @@ function App() {
         <Route path='/addClient' element={<RequireAuth><AddClient /></RequireAuth>} />
         <Route path='/viewClient/:id' element={<RequireAuth><ViewClient /></RequireAuth>} />
         <Route path='/editClient/:id' element={<RequireAuth><EditClient /></RequireAuth>} />
+          <Route path="/editBill/:id" element={<RequireAuth><EditBill /></RequireAuth>} />
       </Routes>
     </Router>
   );

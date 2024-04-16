@@ -11,9 +11,10 @@ import ClientFrm from "../components/Frm/ClientFrm";
 const initialData = {
     name: "",
     address: "",
-    state: "",
-    city: "",
-    phone: "",
+    date: "",
+    item_description: "",
+    price: "",
+    qty: "",
 };
 
 
