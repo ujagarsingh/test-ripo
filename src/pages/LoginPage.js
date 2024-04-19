@@ -8,19 +8,28 @@ import { auth } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Formik } from "formik";
+import * as Yup from 'yup'
+
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  password: Yup.string().required('Password is required')
+    .min(8, 'must be 6 digit password')
+})
 
 function LoginPage() {
   let navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const [error, setError] = useState(false);
-  const [email, setEmail] = useState("admin@welcome.com");
-  const [password, setPassword] = useState("admin123");
+  // const [email, setEmail] = useState("admin@welcome.com");
+  // const [password, setPassword] = useState("admin123");
 
   const { dispatch } = useContext(AuthContext);
 
-  const loginHandler = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+  const loginHandler = (value) => {
+    // e.preventDefault();
+    signInWithEmailAndPassword(auth, value.email, value.password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
@@ -28,8 +37,6 @@ function LoginPage() {
         navigate("/dashboard");
       })
       .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
         setError(true);
       });
   };
@@ -54,78 +61,92 @@ function LoginPage() {
                 )}
               </div>
               <div className="loginInputBox">
-                <form onSubmit={loginHandler}>
-                  <div className="inputField login-username">
-                    <FormControl variant="standard">
-                      <Input
-                        onChange={(e) => setEmail(e.target.value)}
-                        id="email"
-                        type="email"
-                        autoComplete="off"
-                        startAdornment={
-                          <InputAdornment position="start">
-                            <Person4OutlinedIcon />
-                          </InputAdornment>
-                        }
-                      />
-                    </FormControl>
-                  </div>
+                <Formik
+                  initialValues={{
+                    email: '',
+                    password: ''
+                  }}
+                  validationSchema={loginSchema}
+                  onSubmit={(values) => {
+                    loginHandler(values)
+                  }}
+                >
+                  {(formik) => {
+                    const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
+                    return (
+                      <form onSubmit={handleSubmit}>
+                        <div className="inputField login-username">
+                          <FormControl variant="standard">
+                            <Input
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.email}
+                              error={errors.email}
+                              helperText={errors.email}
+                              id="email"
+                              type="email"
+                              autoComplete="off"
+                              startAdornment={
+                                <InputAdornment position="start">
+                                  <Person4OutlinedIcon />
+                                </InputAdornment>
+                              }
+                            />
+                            {errors.email && (
+                              <span className="field_error">{errors.email}</span>
+                            )}
+                          </FormControl>
+                        </div>
 
-                  <div className="inputField login-password">
-                    <FormControl variant="standard">
-                      <Input
-                        onChange={(e) => setPassword(e.target.value)}
-                        id="password"
-                        autoComplete="off"
-                        type={showPass ? "text" : "password"}
-                        startAdornment={
-                          <InputAdornment position="start">
-                            <HttpsOutlinedIcon />
-                          </InputAdornment>
-                        }
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <button type="button" onClick={showPassword}>
-                              {showPass ? (
-                                <VisibilityIcon />
-                              ) : (
-                                <VisibilityOffIcon />
-                              )}
-                            </button>
-                          </InputAdornment>
-                        }
-                      />
-                    </FormControl>
-                  </div>
+                        <div className="inputField login-password">
+                          <FormControl variant="standard">
+                            <Input
 
-                  <div className="login_footer">
-                    <Button
-                      type="submit"
-                      className="login_now"
-                      // onClick={() => loginHandler()}
-                      variant="contained"
-                    >
-                      Login Now
-                    </Button>
-                  </div>
+                              id="password"
+                              onChange={handleChange}
+                              onBlur={handleBlur}
+                              value={values.password}
+                              error={errors.password}
+                              helperText={errors.password}
+                              autoComplete="off"
+                              type={showPass ? "text" : "password"}
+                              startAdornment={
+                                <InputAdornment position="start">
+                                  <HttpsOutlinedIcon />
+                                </InputAdornment>
+                              }
+                              endAdornment={
+                                <InputAdornment position="end">
+                                  <button type="button" onClick={showPassword}>
+                                    {showPass ? (
+                                      <VisibilityIcon />
+                                    ) : (
+                                      <VisibilityOffIcon />
+                                    )}
+                                  </button>
+                                </InputAdornment>
+                              }
+                            />
+                            {errors.password && (
+                              <span className="field_serror">{errors.password}</span>
+                            )}
+                          </FormControl>
+                        </div>
 
-                  {/* <div className="loginTitle">
-                  <div className="loginTitleInner">
-                  <span>Login</span>With Others
-                  </div>
-                  </div>
-
-                <div className="googleLoginBox">
-                  <Button
-                    variant="outlined"
-                    startIcon={
-                      <img src="images/icons/google_icon.svg" alt="google" />
-                    }
-                  >
-                    <span className="loginWidth">Login with</span> <span>google</span>
-                    </Button>
-                  </div> */}
-                </form>
+                        <div className="login_footer">
+                          <Button
+                            type="submit"
+                            className="login_now"
+                            // onClick={() => loginHandler()}
+                            variant="contained"
+                          >
+                            Login Now
+                          </Button>
+                        </div>
+                      </form>
+                    )
+                  }}
+                </Formik>
               </div>
             </div>
             <div className="loginFormImage">

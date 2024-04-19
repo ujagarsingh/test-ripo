@@ -27,7 +27,7 @@ const ProductFrm = ({
       }}
     >
       {(formik) => {
-        const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formik;
+        const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
         return (
           <form onSubmit={handleSubmit} className="addProduct_cover">
             <div className="addproduct_title_box">

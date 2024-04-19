@@ -3,12 +3,9 @@
 }
 
 .arrowKeys {
-  display: flex;
-  flex-direction: column;
-  padding-top: 0;
   position: absolute;
-  right: -66px;
-  top: 5px;
+  bottom: 10px;
+  left: 10px;
 }
 
 .dashboardMenuList .MuiListItemText-root {
@@ -50,7 +47,6 @@
 }
 
 .admin_page .content_area {
-  margin-top: 46px;
   flex-wrap: wrap;
   overflow: scroll;
   height: 80vh;
@@ -86,8 +82,9 @@
   gap: 10px;
   align-items: center;
 }
+
 .dh_left_area .dh_title {
-  font-size:20px;
+  font-size: 20px;
 }
 
 .dh_left_area .back_btn {
@@ -101,6 +98,6 @@
 .dashboard_header {
   display: flex;
   justify-content: space-between;
-  margin-bottom:20px;
-  margin-top:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }

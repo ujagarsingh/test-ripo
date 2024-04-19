@@ -10,6 +10,7 @@ import {
   doc,
   onSnapshot,
 } from "firebase/firestore";
+import { NotificationManager } from 'react-notifications';
 
 const clientCollectionRef = collection(db, "client");
 
@@ -18,7 +19,7 @@ class ClientService {
     try {
       const res = await addDoc(clientCollectionRef, newClient);
       if (res.id) {
-        alert("client successfully added");
+        NotificationManager.success('client successfully added', 'Title here');
       }
       return res;
     } catch (error) {
@@ -50,10 +51,10 @@ class ClientService {
         collection(db, "client"),
         (snapshot) => {
           const newList = snapshot.docs.map((client) =>
-            ({
-              id: client.id,
-              ...client.data(),
-            })
+          ({
+            id: client.id,
+            ...client.data(),
+          })
           );
           cbFun(newList);
         },

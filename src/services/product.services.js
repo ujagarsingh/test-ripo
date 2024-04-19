@@ -1,4 +1,5 @@
 // import { toastError } from "@/lib/utils/constant";
+import { type } from "@testing-library/user-event/dist/type";
 import { db } from "../firebase";
 import {
   collection,
@@ -10,6 +11,7 @@ import {
   doc,
   onSnapshot,
 } from "firebase/firestore";
+import { NotificationManager } from 'react-notifications';
 
 const productCollectionRef = collection(db, "products");
 
@@ -18,7 +20,7 @@ class ProductService {
     try {
       const res = await addDoc(productCollectionRef, newProduct);
       if (res.id) {
-        alert("product successfully added");
+        NotificationManager.success('product successfully added ', 'Title here');
       }
       return res;
     } catch (error) {
@@ -50,10 +52,10 @@ class ProductService {
         collection(db, "products"),
         (snapshot) => {
           const newList = snapshot.docs.map((product) =>
-            ({
-              id: product.id,
-              ...product.data(),
-            })
+          ({
+            id: product.id,
+            ...product.data(),
+          })
           );
           cbFun(newList);
         },
