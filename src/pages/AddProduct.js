@@ -22,10 +22,10 @@ export default function AddProduct() {
     setAddProduct({ ...productData, [e.target.name]: e.target.value });
   };
 
-  const onSubmitHandler = async (e) => {
-    e.preventDefault();
+  const onSubmitHandler = async (value) => {
+    // e.preventDefault();
     await ProductService.addProduct({
-      ...productData,
+      ...value,
       timeStamp: serverTimestamp(),
     });
     setAddProduct(initialData);
@@ -54,6 +54,7 @@ export default function AddProduct() {
         onSubmitHandler={onSubmitHandler}
         productData={productData}
         categoryList={dataList}
+        initialData={initialData}
         onChangeHandler={onChangeHandler}
       />
     </AdminLayout>

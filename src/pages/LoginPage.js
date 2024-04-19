@@ -8,6 +8,14 @@ import { auth } from "../firebase";
 import { AuthContext } from "../context/AuthContext";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { Formik } from "formik";
+import * as Yup from 'yup'
+
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string().required('Email is Required'),
+  password: Yup.string().required('<PASSWORD>'),
+})
 
 function LoginPage() {
   let navigate = useNavigate();
@@ -37,79 +45,92 @@ function LoginPage() {
   const showPassword = () => [setShowPass(!showPass)];
 
   return (
-    <div className="login-bg">
-      <div className="loginContainer">
-        <div className="login-main">
-          <div className="loginFormCover">
-            <div className="loginForm">
-              <div className="loginHeader">
-                <div className="title">LOGIN</div>
-                <div className="subTitle">
-                  How to i get started lorem ipsum dolor at?
+    <Formik
+      initialValues={
+        {
+          email: '',
+          password: ''
+        }
+      }
+    >
+      <div className="login-bg">
+        <div className="loginContainer">
+          <div className="login-main">
+            <div className="loginFormCover">
+              <div className="loginForm">
+                <div className="loginHeader">
+                  <div className="title">LOGIN</div>
+                  <div className="subTitle">
+                    How to i get started lorem ipsum dolor at?
+                  </div>
+                  {error && (
+                    <div className="subTitle" style={{ color: "red" }}>
+                      There is an error!
+                    </div>
+                  )}
                 </div>
-                {error && (
-                  <div className="subTitle" style={{ color: "red" }}>
-                    There is an error!
-                  </div>
-                )}
-              </div>
-              <div className="loginInputBox">
-                <form onSubmit={loginHandler}>
-                  <div className="inputField login-username">
-                    <FormControl variant="standard">
-                      <Input
-                        onChange={(e) => setEmail(e.target.value)}
-                        id="email"
-                        type="email"
-                        autoComplete="off"
-                        startAdornment={
-                          <InputAdornment position="start">
-                            <Person4OutlinedIcon />
-                          </InputAdornment>
-                        }
-                      />
-                    </FormControl>
-                  </div>
+                <div className="loginInputBox">
+                  {(formik) => (
+                            // const {handleSubmit, handleChange, handleBlur, values, errors, touched} = formik;
+                  <form onSubmit={handleSubmit}>
+                    <div className="inputField login-username">
+                      <FormControl variant="standard">
+                        <Input
+                          onChange={handleChange}
+                          id="email"
+                          value={email}
+                          type="email"
+                          // onChange={handleChange}
+                          onBlur={handleBlur}
+                          autoComplete="off"
+                          startAdornment={
+                            <InputAdornment position="start">
+                              <Person4OutlinedIcon />
+                            </InputAdornment>
+                          }
+                        />
+                      </FormControl>
+                    </div>
 
-                  <div className="inputField login-password">
-                    <FormControl variant="standard">
-                      <Input
-                        onChange={(e) => setPassword(e.target.value)}
-                        id="password"
-                        autoComplete="off"
-                        type={showPass ? "text" : "password"}
-                        startAdornment={
-                          <InputAdornment position="start">
-                            <HttpsOutlinedIcon />
-                          </InputAdornment>
-                        }
-                        endAdornment={
-                          <InputAdornment position="end">
-                            <button type="button" onClick={showPassword}>
-                              {showPass ? (
-                                <VisibilityIcon />
-                              ) : (
-                                <VisibilityOffIcon />
-                              )}
-                            </button>
-                          </InputAdornment>
-                        }
-                      />
-                    </FormControl>
-                  </div>
+                    <div className="inputField login-password">
+                      <FormControl variant="standard">
+                        <Input
+                          onChange={(e) => setPassword(e.target.value)}
+                          id="password"
+                          autoComplete="off"
+                          value={password}
+                          type={showPass ? "text" : "password"}
+                          startAdornment={
+                            <InputAdornment position="start">
+                              <HttpsOutlinedIcon />
+                            </InputAdornment>
+                          }
+                          endAdornment={
+                            <InputAdornment position="end">
+                              <button type="button" onClick={showPassword}>
+                                {showPass ? (
+                                  <VisibilityIcon />
+                                ) : (
+                                  <VisibilityOffIcon />
+                                )}
+                              </button>
+                            </InputAdornment>
+                          }
+                        />
+                      </FormControl>
+                    </div>
 
-                  <div className="login_footer">
-                    <Button
-                      type="submit"
-                      className="login_now"
-                      // onClick={() => loginHandler()}
-                      variant="contained"
-                    >
-                      Login Now
-                    </Button>
-                  </div>
+                    <div className="login_footer">
+                      <Button
+                        type="submit"
+                        className="login_now"
+                        variant="contained"
+                      >
+                        Login Now
+                      </Button>
+                    </div>
 
-                  {/* <div className="loginTitle">
+                    {/* <div className="loginTitle">
                   <div className="loginTitleInner">
                   <span>Login</span>With Others
                   </div>
@@ -125,22 +146,24 @@ function LoginPage() {
                     <span className="loginWidth">Login with</span> <span>google</span>
                     </Button>
                   </div> */}
-                </form>
+                  </form>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="loginFormImage">
-              <div className="loginOverlayImage">
-                <img className="girlimage" src="images/computer.png" alt="vk" />
-                <div className="loginOverlay"></div>
-              </div>
-              <div className="loginFormImageBG">
-                <img src="images/pngwing.png" alt="vk" />
+              <div className="loginFormImage">
+                <div className="loginOverlayImage">
+                  <img className="girlimage" src="images/computer.png" alt="vk" />
+                  <div className="loginOverlay"></div>
+                </div>
+                <div className="loginFormImageBG">
+                  <img src="images/pngwing.png" alt="vk" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Formik>
   );
 }
 

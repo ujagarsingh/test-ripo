@@ -45,3 +45,7 @@
 .addProduct_title .MuiSvgIcon-root {
     cursor: pointer;
 }
+
+.field_error{
+    color: red;
+}

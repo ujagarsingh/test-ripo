@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import AdminLayout from "../Layout/AdminLayout";
 import CategoryFrm from "../components/Frm/CategoryFrm";
 import categoryServices from "../services/category.services";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 const initialData = {
@@ -15,17 +15,18 @@ const initialData = {
 
 const AddCategory = () => {
 
-let navigate = useNavigate()
+    let navigate = useNavigate()
     const [categoryData, setAddCategory] = useState(initialData);
 
     const onChangeHandler = (e) => {
         setAddCategory({ ...categoryData, [e.target.name]: e.target.value });
     };
 
-    const onSubmitHandler = async (e) => {
-        e.preventDefault();
+    const onSubmitHandler = async (value) => {
+        // e.preventDefault();
+        
         const res = await categoryServices.addCategory({
-            ...categoryData,
+            ...value,
             timeStamp: serverTimestamp(),
         });
         navigate("/categoryList")
