@@ -31,10 +31,7 @@ const CategoryList = () => {
     },
   }));
 
-  // const getAllCategoryList = async () => {
-  //   const data = await categoryService.getAllCategorys();
-  //   setDataList(data);
-  // };
+  
 
   const deleteCategoryHandler = async (id) => {
     await categoryService.deleteCategory(id);
@@ -53,7 +50,7 @@ const CategoryList = () => {
     return () => unSub();
   }, []);
 
-
+console.log(dataList)
 
   return (
     <AdminLayout

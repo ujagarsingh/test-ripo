@@ -27,10 +27,10 @@ let navigate = useNavigate()
         setAddClient({ ...clientData, [e.target.name]: e.target.value });
     };
 
-    const onSubmitHandler = async (e) => {
-        e.preventDefault();
+    const onSubmitHandler = async (value) => {
+        // e.preventDefault();
         const res = await clientServices.addClient({
-            ...clientData,
+            ...value,
             timeStamp: serverTimestamp(),
         });
         navigate("/clientList")

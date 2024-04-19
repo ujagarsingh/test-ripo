@@ -1,5 +1,4 @@
 import { Box, Button, Container, Icon, TextField, Typography } from '@mui/material'
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import SubscriptionsRoundedIcon from '@mui/icons-material/SubscriptionsRounded';
 import CameraRoundedIcon from '@mui/icons-material/CameraRounded';
 import Diversity2RoundedIcon from '@mui/icons-material/Diversity2Rounded';
@@ -8,24 +7,24 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useNavigate } from 'react-router-dom';
 
 
-const detail_data =[
-    {
-        title: "Products",
-        content_1: "Network Cameras",
-        content_2: "HDCVI Cameras",
-        content_3: "PTZ Cameras",
-        content_4: "Thermal Cameras",
-        content_5: "Explosion-Proof & Anti-Corrosion",
-        content_6: "Network Recorders",
-    },
+const detail_data = [
 	{
-		title:"Support",
+		title: "Products",
 		content_1: "Network Cameras",
-        content_2: "HDCVI Cameras",
-        content_3: "PTZ Cameras",
-        content_4: "Thermal Cameras",
-        content_5: "Explosion-Proof & Anti-Corrosion",
-        content_6: "Network Recorders",
+		content_2: "HDCVI Cameras",
+		content_3: "PTZ Cameras",
+		content_4: "Thermal Cameras",
+		content_5: "Explosion-Proof & Anti-Corrosion",
+		content_6: "Network Recorders",
+	},
+	{
+		title: "Support",
+		content_1: "Network Cameras",
+		content_2: "HDCVI Cameras",
+		content_3: "PTZ Cameras",
+		content_4: "Thermal Cameras",
+		content_5: "Explosion-Proof & Anti-Corrosion",
+		content_6: "Network Recorders",
 	}
 ]
 
@@ -52,7 +51,7 @@ function Details() {
 							Enter your email address to receive the latest news & products information</h6>
 					</div>
 
-{/* 					
+					{/* 					
 				{detail_data.map((el, index) => (
 					<SwiperSlide key={index}>
 						<SingleProduct detail_data={el} />
@@ -211,14 +210,13 @@ function Details() {
 						<Box className='fotter_icons'>
 							<Icon>
 								<FacebookIcon />
-								<FacebookRoundedIcon />
 								<SubscriptionsRoundedIcon />
 								<CameraRoundedIcon />
 								<Diversity2RoundedIcon />
 							</Icon>
 						</Box>
 						<Box className='goToTop' onClick={() => goToTop()}>
-							<Icon>
+							<Icon className='icon'>
 								<KeyboardArrowUpIcon />
 							</Icon>
 						</Box>
