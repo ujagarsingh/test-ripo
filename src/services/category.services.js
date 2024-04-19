@@ -10,6 +10,7 @@ import {
   doc,
   onSnapshot,
 } from "firebase/firestore";
+import { NotificationManager } from 'react-notifications';
 
 const categoryCollectionRef = collection(db, "category");
 
@@ -18,7 +19,7 @@ class CategoryService {
     try {
       const res = await addDoc(categoryCollectionRef, newCategory);
       if (res.id) {
-        alert("category successfully added");
+        NotificationManager.success('category successfully added', 'Title here');
       }
       return res;
     } catch (error) {
@@ -50,10 +51,10 @@ class CategoryService {
         collection(db, "category"),
         (snapshot) => {
           const newList = snapshot.docs.map((category) =>
-            ({
-              id: category.id,
-              ...category.data(),
-            })
+          ({
+            id: category.id,
+            ...category.data(),
+          })
           );
           cbFun(newList);
         },

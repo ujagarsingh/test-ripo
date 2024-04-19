@@ -2,14 +2,15 @@ import React from "react";
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import 'yup-phone';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 const clientSchema = Yup.object().shape({
     name: Yup.string().required('Name is Required'),
     address: Yup.string().required('Address is Required'),
     state: Yup.string().required('State is Required'),
     city: Yup.string().required('City is Required'),
-    phone: Yup.number().required('Phone is Required'),
-
+    phone:Yup.string().matches(/^\d{10}$/, 'Please enter a valid Number').required('Phone is Required'),
 })
 
 const ClientFrm = ({
@@ -21,12 +22,13 @@ const ClientFrm = ({
         <Formik
             initialValues={clientData}
             validationSchema={clientSchema}
+            enableReinitialize={true}
             onSubmit={(values) => {
                 onSubmitHandler(values)
             }}
         >
             {(formik) => {
-                const { handleSubmit, handleChange, handleBlur, values, errors, touched } = formik;
+                const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
                 return (
                     <form onSubmit={handleSubmit} className="addProduct_cover">
                         <div className='addproduct_title_box'>
@@ -34,12 +36,12 @@ const ClientFrm = ({
                                 <Box className="addProductInputBox">
                                     <label>Name <span>*</span> </label>
                                     <TextField
+                                        name="name"
                                         size="small"
                                         onChange={handleChange}
-                                        name="name"
                                         onBlur={handleBlur}
                                         value={values.name}
-                                        error={ errors.name}
+                                        error={errors.name}
                                         helperText={errors.name}
                                         // value={clientData?.name}
                                         // label="Product Name"
@@ -54,7 +56,7 @@ const ClientFrm = ({
                                         name="address"
                                         onBlur={handleBlur}
                                         value={values.address}
-                                        error={ errors.address}
+                                        error={errors.address}
                                         helperText={errors.address}
                                         // value={clientData?.address}
                                         // label="Description"
@@ -69,7 +71,7 @@ const ClientFrm = ({
                                         name="state"
                                         onBlur={handleBlur}
                                         value={values.state}
-                                        error={ errors.state}
+                                        error={errors.state}
                                         helperText={errors.state}
                                         // value={clientData?.state}
                                         // label="Description"
@@ -84,7 +86,7 @@ const ClientFrm = ({
                                         name="city"
                                         onBlur={handleBlur}
                                         value={values.city}
-                                        error={ errors.city}
+                                        error={errors.city}
                                         helperText={errors.city}
                                         // value={clientData?.city}
                                         // label="Description"
@@ -94,12 +96,13 @@ const ClientFrm = ({
                                 <Box className="addProductInputBox">
                                     <label>Phone <span>*</span> </label>
                                     <TextField
+                                        type='number'
+                                        name="phone"
                                         size="small"
                                         onChange={handleChange}
-                                        name="phone"
                                         onBlur={handleBlur}
                                         value={values.phone}
-                                        error={ errors.phone}
+                                        error={errors.phone}
                                         helperText={errors.phone}
                                         // value={clientData?.phone}
                                         // label="Description"
