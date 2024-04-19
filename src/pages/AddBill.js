@@ -7,25 +7,33 @@ import clientServices from "../services/client.services";
 import ProductService from "../services/product.services";
 
 const initialData = {
-  client_id: "GAqtQA3nhIrhkA7TXSMf",
-  client_name: "gagan",
-  client_address: "uykadshjki",
+  client_id: "",
+  client_name: "",
+  client_address: "",
   date: "04/04/2024",
   items: [
     {
-      product_id: "KwGB8AHSlmsBQA0ZafYs",
+      product_id: "",
       product: "",
       name: "",
-      price: "1500",
-      quantity: "5",
+      price: "",
+      quantity: "",
       total: "",
     },
     {
-      product_id: "KwGB8AHSlmsBQA0ZafYs",
+      product_id: "",
       product: "",
       name: "",
-      price: "1500",
-      quantity: "5",
+      price: "",
+      quantity: "",
+      total: "",
+    },
+    {
+      product_id: "",
+      product: "",
+      name: "",
+      price: "",
+      quantity: "",
       total: "",
     },
   ],
@@ -60,7 +68,7 @@ const AddBill = () => {
     return unSub;
   };
 
-  const onChangeHandler = (e) => {
+  const onChangeHandler = (e, index) => {
     if (e.target.name === "client_id") {
       const cItem = clientList.find((el) => {
         if (el.id === e.target.value) {
@@ -74,9 +82,54 @@ const AddBill = () => {
         client_address: cItem.address,
       };
       setAddBill((pre) => (pre = newData));
-    }
-    if (e.target.name === "product_id") {
-      
+    } else if (e.target.name === "product_id") {
+      // get the current product form productList
+      const cItem = productList.find((el) => {
+        if (el.id === e.target.value) {
+          return el;
+        }
+      });
+      // create product for bill
+      const product = {
+        product_id: e.target.value,
+        price: cItem.price,
+        name: cItem.name,
+      };
+      // map bill items with created product
+      const newItems = billData?.items.map((el, inx) => {
+        if (inx === index) {
+          return product;
+        }
+        return el;
+      });
+      //  merge billData object
+      const newData = {
+        ...billData,
+        items: newItems,
+      };
+      // set billData 
+      setAddBill(newData);
+
+    } else if (e.target.name === "quantity") {
+      const newItems = billData?.items.map((el, inx) => {
+        if (inx === index) {
+          const itemCost = e.target.value * el.price;
+          return { ...el, quantity: e.target.value, total: itemCost };
+        }
+        return el;
+      });
+
+      const totalValue = newItems.reduce(
+        (accumulator, currentValue) => accumulator + currentValue["total"],
+        0
+      );
+
+      const newData = {
+        ...billData,
+        items: newItems,
+        total: totalValue,
+      };
+      setAddBill((res) => (res = newData));
     } else {
       setAddBill({ ...billData, [e.target.name]: e.target.value });
     }
@@ -89,12 +142,12 @@ const AddBill = () => {
 
   const getAllProductList = () => {
     const unSub = ProductService.productListener((data) => {
-      const productList = data.map((item) => ({
+      const products = data.map((item) => ({
         id: item.id,
         name: item.name,
+        price: item.selling_price,
       }));
-      console.log(productList);
-      setProductList(productList);
+      setProductList(products);
     });
     return unSub;
   };

@@ -22,7 +22,9 @@ const BillFrm = ({
   clientList,
   onHandler = [],
 }) => {
-  console.log(billData);
+  
+  console.log(billData.items);
+
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -153,7 +155,7 @@ const BillFrm = ({
                         <Select
                           name="product_id"
                           value={item.product_id}
-                          onChange={onChangeHandler}
+                          onChange={(e) => onChangeHandler(e, index)}
                           size="small"
                           sx={{ width: 210 }}
                         >
@@ -178,7 +180,7 @@ const BillFrm = ({
                       >
                         <TextField
                           size="small"
-                          onChange={(e) => onChangeHandler(e)}
+                          onChange={(e) => onChangeHandler(e, index)}
                           name="price"
                           value={item.price}
                           variant="outlined"
@@ -196,15 +198,14 @@ const BillFrm = ({
                       >
                         <TextField
                           size="small"
-                          onChange={(e) => onChangeHandler(e)}
+                          onChange={(e) => onChangeHandler(e, index)}
                           name="quantity"
                           value={item.quantity}
-                          label="quantity."
                           variant="outlined"
                         />
                       </Box>
                     </TableCell>
-                    <TableCell align="left">250$</TableCell>
+                    <TableCell align="left">{item.total}</TableCell>
                   </TableRow>
                 );
               })}
