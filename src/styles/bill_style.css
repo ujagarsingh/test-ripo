@@ -61,6 +61,10 @@
     font-size: 28px;
 }
 
+.bill_address {
+    float:right;
+}
+
 
 .bill_address h3 {
     display: flex;
