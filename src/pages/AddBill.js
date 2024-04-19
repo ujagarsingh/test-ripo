@@ -130,7 +130,18 @@ const AddBill = () => {
         total: totalValue,
       };
       setAddBill((res) => (res = newData));
-    } else {
+    } else if (e.target.name === "discount") {
+
+      const g_total = billData.total - e.target.value;
+      const gTotal = {
+        ...billData,
+        discount: e.target.value,
+        g_total: g_total,
+      };
+      setAddBill((res) => (res = gTotal));
+
+    }
+    else {
       setAddBill({ ...billData, [e.target.name]: e.target.value });
     }
   };

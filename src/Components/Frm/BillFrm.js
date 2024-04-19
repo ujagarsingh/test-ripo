@@ -231,6 +231,7 @@ const BillFrm = ({
                   autoComplete="off"
                 >
                   <TextField
+                  size='small'
                     onChange={(e) => onChangeHandler(e)}
                     name="discount"
                     value={billData?.discount}
@@ -240,28 +241,7 @@ const BillFrm = ({
                 </Box>
               </span>
             </h3>
-            <h3 className="discount_box">
-              Grand Total :{" "}
-              <span>
-                <Box
-                  component="form"
-                  sx={{
-                    "& > :not(style)": { m: 1, width: "25ch" },
-                  }}
-                  noValidate
-                  autoComplete="off"
-                >
-                  <TextField
-                    size="small"
-                    onChange={(e) => onChangeHandler(e)}
-                    name="g_total"
-                    value={billData.g_total}
-                    label="g_total"
-                    variant="outlined"
-                  />
-                </Box>
-              </span>
-            </h3>
+            
           </div>
         </div>
 
@@ -273,7 +253,7 @@ const BillFrm = ({
               industry. Lorem ipsum has been the industry's standred dummy text.
             </p>
             <h2>
-              Total: <span>280$</span>
+              Grand Total: <span>{billData.g_total}</span>
             </h2>
           </div>
         </div>
