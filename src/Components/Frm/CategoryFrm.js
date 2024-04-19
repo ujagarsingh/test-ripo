@@ -14,10 +14,12 @@ const CategoryFrm = ({
     onSubmitHandler,
     categoryData,
 }) => {
+    console.log(categoryData)
     return (
         <Formik
             initialValues={categoryData}
             validationSchema={categorySchema}
+            enableReinitialize={true} 
             onSubmit={(values) => {
                 onSubmitHandler(values)
             }}
@@ -27,6 +29,7 @@ const CategoryFrm = ({
 
             {(formik) => {
                 const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
+                console.log(values)
                 return (
                     <form onSubmit={handleSubmit} className="addProduct_cover">
                         <div className='addproduct_title_box'>

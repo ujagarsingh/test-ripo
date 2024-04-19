@@ -22,6 +22,7 @@ const ClientFrm = ({
         <Formik
             initialValues={clientData}
             validationSchema={clientSchema}
+            enableReinitialize={true}
             onSubmit={(values) => {
                 onSubmitHandler(values)
             }}
