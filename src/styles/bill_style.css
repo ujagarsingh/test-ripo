@@ -36,7 +36,7 @@
 }
 .bill_total_cover {
     width: 1050px !important;
-    margin:auto;
+    margin:10px auto;
 }
 
 
@@ -190,4 +190,8 @@
     float: right;
     background-color: white;
     padding: 0px 55px 0 55px;
+}
+
+.css-1ex1afd-MuiTableCell-root{
+    /* padding: 0 !important; */
 }

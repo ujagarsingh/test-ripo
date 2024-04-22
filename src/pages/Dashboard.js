@@ -8,8 +8,11 @@ import Typography from '@mui/material/Typography';
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
+import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
+import ViewInArOutlinedIcon from '@mui/icons-material/ViewInArOutlined';
+import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
+import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import {
   Table,
@@ -21,10 +24,6 @@ import {
   styled,
   tableCellClasses,
 } from "@mui/material";
-import PeopleOutlineOutlinedIcon from '@mui/icons-material/PeopleOutlineOutlined';
-import ViewInArOutlinedIcon from '@mui/icons-material/ViewInArOutlined';
-import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';
-import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -92,14 +91,15 @@ const Dashdata = [{
 
 export default function BasicCard() {
   return (
-    <AdminLayout>
+    <AdminLayout
+    title="Sales Overview">
       <Box >
-        <Typography variant='h1' className='cardTitle'>Sales Overview</Typography>
+        {/* 0 */}
       </Box>
       <Box className='CardParent'>
         <Card className='basic_card'>
           <Box>
-            <CardContent >
+            <CardContent className="CardContent" >
               <Box className='Content'>
                 <Typography className="Title_text" >
                   <ReceiptLongOutlinedIcon className="personIcon" /> Total Revenue
@@ -125,7 +125,7 @@ export default function BasicCard() {
 
         <Card className='basic_card'>
           <Box>
-            <CardContent >
+            <CardContent className="CardContent" >
               <Box className='Content'>
                 <Typography className="Title_text" gutterBottom>
                   <BorderColorOutlinedIcon className="personIcon" /> Average Order
@@ -151,7 +151,7 @@ export default function BasicCard() {
 
         <Card className='basic_card'>
           <Box>
-            <CardContent >
+            <CardContent className="CardContent" >
               <Box className='Content'>
                 <Typography className="Title_text" >
                   <PeopleOutlineOutlinedIcon className="personIcon" /> Total Custumers
@@ -177,7 +177,7 @@ export default function BasicCard() {
 
         <Card className='basic_card'>
           <Box>
-            <CardContent >
+            <CardContent className="CardContent" >
               <Box className='Content'>
                 <Typography className="Title_text" gutterBottom>
                   <ViewInArOutlinedIcon className="personIcon" /> Product Sold
