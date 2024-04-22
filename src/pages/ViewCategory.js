@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Box, Button, TextField } from "@mui/material";
 import { useParams } from "react-router-dom";
-import Typography from "@mui/material/Typography";
 import AdminLayout from "../Layout/AdminLayout";
 import categoryServices from "../services/category.services";
 

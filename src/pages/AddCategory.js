@@ -1,4 +1,3 @@
-import ProductService from "../services/product.services";
 import { serverTimestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import AdminLayout from "../Layout/AdminLayout";
@@ -24,7 +23,7 @@ const AddCategory = () => {
 
     const onSubmitHandler = async (value) => {
         // e.preventDefault();
-        
+
         const res = await categoryServices.addCategory({
             ...value,
             timeStamp: serverTimestamp(),

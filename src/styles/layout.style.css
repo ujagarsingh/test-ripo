@@ -48,10 +48,11 @@
 
 .admin_page .content_area {
   flex-wrap: wrap;
-  overflow: scroll;
-  height: 80vh;
+  overflow: auto;
+  height: 100%;
   width: 90%;
   justify-content: center;
+  /* background-color: rgba(0,0,0,0.2) !important; */
 }
 
 .sidebar .MuiListSubheader-root {
@@ -100,4 +101,103 @@
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.cardTitle {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  margin-left: 15px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: normal !important;
+}
+
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Dot {
+  color: #717275;
+  font-size: 23px !important;
+  font-weight: 700 !important;
+}
+
+.CardParent {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin: 0 10px 5px 10px;
+}
+
+.basic_card {
+  border-radius: 15px !important;
+  width: 300px !important;
+}
+
+.Title_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+}
+
+.personIcon {
+  border: 1px solid transparent;
+  background: #e0e8e9;
+  padding: 4px;
+  border-radius: 10px;
+  color: #6060e3;
+}
+
+.middleLine {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.Revenue {
+  font-size: 25px !important;
+  font-weight: 600 !important;
+}
+
+.increment {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #25a35e;
+  border-radius: 10px;
+  margin-top: 12px !important;
+  padding: 2px 8px;
+  font-size: 13px !important;
+  color: lightgreen;
+  margin-bottom: 12px !important;
+}
+
+.increIcon {
+  font-size: 14px !important;
+}
+
+.decrement {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #25a35e;
+  border-radius: 10px;
+  margin-top: 12px !important;
+  padding: 2px 8px;
+  font-size: 13px !important;
+  color: lightgreen;
+  margin-bottom: 12px !important;
+}
+
+.decreIcon {
+  font-size: 14px !important;
+}
+
+.CardContent {
+  padding-bottom: 14px !important;
 }

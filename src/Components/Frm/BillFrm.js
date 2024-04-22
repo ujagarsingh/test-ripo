@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import Box from "@mui/material/Box";
@@ -15,6 +15,7 @@ import {
   Select,
 } from "@mui/material";
 
+
 const BillFrm = ({
   onChangeHandler,
   billData,
@@ -22,17 +23,20 @@ const BillFrm = ({
   clientList,
   onHandler = [],
 }) => {
-  
+
   console.log(billData.items);
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
       color: theme.palette.common.white,
+      Padding: theme.palette.common.none
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14,
+      Padding: theme.palette.common.none
     },
+
   }));
 
   return (
@@ -56,7 +60,7 @@ const BillFrm = ({
               Date{" "}
               <span className="date">
                 <Box
-                  component="form"
+                  component="div"
                   sx={{
                     "& > :not(style)": { m: 1, width: "25ch" },
                   }}
@@ -77,7 +81,7 @@ const BillFrm = ({
           </div>
           <h1>
             <Box
-              component="form"
+              component="div"
               sx={{
                 "& > :not(style)": { m: 1, width: "25ch" },
               }}
@@ -102,7 +106,7 @@ const BillFrm = ({
             </Box>
           </h1>
           <Box
-            component="form"
+            component="div"
             sx={{
               "& > :not(style)": { m: 1, width: "25ch" },
             }}
@@ -123,8 +127,8 @@ const BillFrm = ({
         </div>
 
         <TableContainer className="table_list_cover">
-          <Table>
-            <TableHead>
+          <Table size="small" className='small'>
+            <TableHead >
               <TableRow>
                 <TableCell align="left">Sl</TableCell>
                 <StyledTableCell align="left">Product</StyledTableCell>
@@ -136,7 +140,7 @@ const BillFrm = ({
             <TableBody>
               {billData.items.map((item, index) => {
                 return (
-                  <TableRow
+                  <TableRow size='small'
                     key={index}
                     sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
@@ -145,7 +149,7 @@ const BillFrm = ({
                     </TableCell>
                     <TableCell align="left">
                       <Box
-                        component="form"
+                        component="div"
                         sx={{
                           "& > :not(style)": { m: 1, width: "25ch" },
                         }}
@@ -171,7 +175,7 @@ const BillFrm = ({
                     </TableCell>
                     <TableCell align="left">
                       <Box
-                        component="form"
+                        component="div"
                         sx={{
                           "& > :not(style)": { m: 1, width: "25ch" },
                         }}
@@ -189,7 +193,7 @@ const BillFrm = ({
                     </TableCell>
                     <TableCell align="left">
                       <Box
-                        component="form"
+                        component="div"
                         sx={{
                           "& > :not(style)": { m: 1, width: "25ch" },
                         }}
@@ -223,7 +227,7 @@ const BillFrm = ({
               discount :{" "}
               <span className="tax">
                 <Box
-                  component="form"
+                  component="div"
                   sx={{
                     "& > :not(style)": { m: 1, width: "25ch" },
                   }}
@@ -231,7 +235,7 @@ const BillFrm = ({
                   autoComplete="off"
                 >
                   <TextField
-                  size='small'
+                    size='small'
                     onChange={(e) => onChangeHandler(e)}
                     name="discount"
                     value={billData?.discount}
@@ -241,7 +245,7 @@ const BillFrm = ({
                 </Box>
               </span>
             </h3>
-            
+
           </div>
         </div>
 

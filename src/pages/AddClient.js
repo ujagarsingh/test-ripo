@@ -1,9 +1,7 @@
-import ProductService from "../services/product.services";
 import { serverTimestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import AdminLayout from "../Layout/AdminLayout";
-import CategoryFrm from "../components/Frm/CategoryFrm";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import clientServices from "../services/client.services";
 import ClientFrm from "../components/Frm/ClientFrm";
 
@@ -20,7 +18,7 @@ const initialData = {
 
 const AddClient = () => {
 
-let navigate = useNavigate()
+    let navigate = useNavigate()
     const [clientData, setAddClient] = useState(initialData);
 
     const onChangeHandler = (e) => {

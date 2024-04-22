@@ -23,7 +23,7 @@ function DashboardMenu() {
       <List
         sx={{
           width: "100%",
-          maxWidth: 250,
+          maxWidth:550,
           bgcolor: "#717275",
           color: "white",
           height: "89.9vh",
