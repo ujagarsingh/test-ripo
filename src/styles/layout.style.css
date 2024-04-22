@@ -52,6 +52,7 @@
   height: 80vh;
   width: 90%;
   justify-content: center;
+  background-color: #d1dfd7 !important;
 }
 
 .sidebar .MuiListSubheader-root {
@@ -100,4 +101,101 @@
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.cardTitle {
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  margin-left: 15px !important;
+  margin-bottom: 20px !important;
+  letter-spacing: normal !important;
+}
+
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Dot {
+  color: #717275;
+  font-size: 23px !important;
+  font-weight: 700 !important;
+}
+
+.CardParent {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.basic_card {
+  border-radius: 15px !important;
+  width: 300px !important;
+  margin-left: 10px !important;
+}
+
+.Title_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+}
+
+.personIcon {
+  border: 1px solid transparent;
+  background: #e0e8e9;
+  padding: 4px;
+  border-radius: 10px;
+  color: #6060e3;
+}
+
+.middleLine {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.Revenue {
+  font-size: 25px !important;
+  font-weight: 600 !important;
+  margin-top: 15px !important;
+}
+
+.increment {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #25a35e;
+  border-radius: 10px;
+  margin-top: 25px !important;
+  padding: 2px 8px;
+  font-size: 12px !important;
+  color: lightgreen;
+  margin-bottom: 24px !important;
+}
+
+.increIcon {
+  font-size: 14px !important;
+}
+
+.decrement {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgb(241, 213, 213);
+  border-radius: 10px;
+  margin-top: 25px !important;
+  padding: 2px 8px;
+  font-size: 12px !important;
+  color: lightcoral;
+  margin-bottom: 24px !important;
+}
+
+.decreIcon {
+  font-size: 14px !important;
 }
