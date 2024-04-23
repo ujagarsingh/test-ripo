@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 const Bill = () => {
 
 
-
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -48,9 +47,9 @@ const Bill = () => {
     <AdminLayout>
 
       <div className='bill_container'>
-        <Button onClick={() => AddBillHandler()} variant='outlined' sx={{display:'flex',alignItem:'end',justifyContent:'end'}}>Add A Bill</Button>
+        <Button onClick={() => AddBillHandler()} variant='outlined' sx={{ display: 'flex', alignItem: 'end', justifyContent: 'end' }}>Add A Bill</Button>
         <Typography className='bill_logo'>
-          <img src='images/favicon.png' />
+          <img src='images/favicon.png' alt='vk' />
         </Typography>
 
         <div className='bill_cover'>
@@ -74,7 +73,7 @@ const Bill = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell align='left'>Sl</TableCell>
+                <StyledTableCell align='left'>Sr.No.</StyledTableCell>
                 <StyledTableCell align="left">Item Description</StyledTableCell>
                 <StyledTableCell align="left">Price</StyledTableCell>
                 <StyledTableCell align="left">Qty.</StyledTableCell>
@@ -127,16 +126,16 @@ const Bill = () => {
 
           <div className='bill_payment'>
             <h5>Account #: <span className='account'>1210 5210 8542</span></h5>
-            <h5>A/C Name: <span className='name'>Lorem Ipsum</span></h5>
+            <h5>A/C Name: <span className='name'>Jigyasa Sharma</span></h5>
             <h5>Bank Details: <span className='bank_detail'>Add Your Bank Details</span></h5>
           </div>
         </div>
-        
 
 
-<div className='bill_footer'>
-  <h4>Authorized Sign</h4>
-</div>
+
+        <div className='bill_footer'>
+          <h4>Authorized Sign</h4>
+        </div>
 
 
       </div>

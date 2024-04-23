@@ -214,7 +214,7 @@ export default function BasicCard() {
                 <StyledTableCell align="left">Deposite</StyledTableCell>
                 <StyledTableCell align="center">Balance</StyledTableCell>
                 <StyledTableCell align="center">Due Time(Monts)</StyledTableCell>
-                <StyledTableCell align="center">Action(Months)</StyledTableCell>
+                <StyledTableCell align="center">Action</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>

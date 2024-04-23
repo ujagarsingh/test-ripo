@@ -34,7 +34,7 @@ const AddCategory = () => {
 
     return (
         <AdminLayout
-            title="Add New Product"
+            title="Add New Category"
         >
             <CategoryFrm
                 btnText="Create Category"

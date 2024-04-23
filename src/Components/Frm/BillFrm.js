@@ -34,7 +34,7 @@ const BillFrm = ({
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14,
-      Padding: theme.palette.common.none
+      
     },
 
   }));
@@ -130,7 +130,7 @@ const BillFrm = ({
           <Table size="small" className='small'>
             <TableHead >
               <TableRow>
-                <TableCell align="left">Sl</TableCell>
+                <StyledTableCell align="left">Sr.No.</StyledTableCell>
                 <StyledTableCell align="left">Product</StyledTableCell>
                 <StyledTableCell align="left">Price</StyledTableCell>
                 <StyledTableCell align="left">quantity.</StyledTableCell>
@@ -270,7 +270,7 @@ const BillFrm = ({
               Account #: <span className="account">1210 5210 8542</span>
             </h5>
             <h5>
-              A/C Name: <span className="name">Lorem Ipsum</span>
+              A/C Name: <span className="name">Pankaj Singh</span>
             </h5>
             <h5>
               Bank Details:{" "}
