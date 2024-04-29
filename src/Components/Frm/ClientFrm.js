@@ -3,15 +3,19 @@ import { Box, Button, TextField } from "@mui/material";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import 'yup-phone';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 
 const clientSchema = Yup.object().shape({
     name: Yup.string().required('Name is Required'),
     address: Yup.string().required('Address is Required'),
     state: Yup.string().required('State is Required'),
     city: Yup.string().required('City is Required'),
-    phone:Yup.string().matches(/^\d{10}$/, 'Please enter a valid Number').required('Phone is Required'),
+    phone: Yup.string().matches("Invalid phone").required("Phone is required"),
 })
+
+// const phoneRegex = RegExp(
+//     /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+//   );
 
 const ClientFrm = ({
     btnText,
