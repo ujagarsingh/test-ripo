@@ -1,4 +1,4 @@
-// import { toastError } from "@/lib/utils/constant";
+import { NotificationContainer,NotificationManager } from "react-notifications";
 import { db } from "../firebase";
 import {
   collection,
@@ -18,7 +18,7 @@ class BillService {
     try {
       const res = await addDoc(billCollectionRef, newBill);
       if (res.id) {
-        alert("bill successfully added");
+        NotificationManager.success("bill successfully added",'Title here');
       }
       return res;
     } catch (error) {

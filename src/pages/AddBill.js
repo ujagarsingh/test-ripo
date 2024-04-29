@@ -10,7 +10,7 @@ const initialData = {
   client_id: "",
   client_name: "",
   client_address: "",
-  date: "04/04/2024",
+  date: "",
   items: [
     {
       product_id: "",
