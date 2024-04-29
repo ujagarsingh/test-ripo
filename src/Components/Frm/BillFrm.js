@@ -1,8 +1,10 @@
 import React from "react";
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import * as Yup from 'yup'
 import {
   Button,
   Table,
@@ -39,20 +41,27 @@ const BillFrm = ({
 
   }));
 
+  const billSchema = Yup.object().shape({
+    date: Yup.string().required('date is required !')
+  })
+
   return (
     <Formik
-      initialValues={clientData}
-      validationSchema={clientSchema}
+      initialValues={billData}
+      validationSchema={billSchema}
       enableReinitialize={true}
       onSubmit={(values) => {
-        onSubmitHandler(values)
+        onHandler(values)
       }}
     >
-      {(formik) => {
-        const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
-        return (
-          <form onSubmit={onHandler} >
 
+
+      {(formik) => {
+
+        const { handleSubmit, handleChange, handleBlur, values, errors } = formik;
+
+        <Form >
+          <form onSubmit={handleSubmit}>
             <div className="bill_container">
               <Typography className="bill_logo">
                 <img src="images/favicon.png" />
@@ -79,15 +88,19 @@ const BillFrm = ({
                         noValidate
                         autoComplete="off"
                       >
+                         <Field name="date"  />
                         <TextField
                           size="small"
-                          //  onChange={(e) => onChangeHandler(e)}
+                          onChange={(e) => onChangeHandler(e)}
                           name="date"
                           value={billData?.date}
                           type="date"
                           variant="outlined"
                         />
                       </Box>
+                      
+                      <span>this field is required</span>
+                      <ErrorMessage name='date' component='span' />
                     </span>
                   </h3>
                 </div>
@@ -302,11 +315,10 @@ const BillFrm = ({
               </Button>
             </div>
           </form>
-        );
-      }};
+        </Form>
+      }}
     </Formik>
-  )
-}
-
+  );
+};
 
 export default BillFrm;
